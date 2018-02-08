@@ -1,11 +1,17 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { Route, Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 
 import store from './configureStore'
 import history from './history'
-import Home from './components/Home'
+import Landing from './components/Landing'
+import Lab from './components/Lab'
+import Publications from './components/Publications'
+import Reading from './components/Reading'
+import Collaborative from './components/Collaborative'
+import Work from './components/Work'
+import Content from './components/Content'
 import Footer from './components/Footer'
 
 import './App.css'
@@ -23,8 +29,13 @@ const App = () =>
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Layout>
-        <Route exact path='/' render={() => <Redirect to='/home' />} />
-        <Route path='/home' component={Home} />
+        <Route exact path='/' component={Landing} />
+        <Route path='/lab' component={Lab} />
+        <Route path='/publications' component={Publications} />
+        <Route path='/reading' component={Reading} />
+        <Route path='/collaborative' component={Collaborative} />
+        <Route path='/work' component={Work} />
+        <Route path='/content' component={Content} />
       </Layout>
     </ConnectedRouter>
   </Provider>

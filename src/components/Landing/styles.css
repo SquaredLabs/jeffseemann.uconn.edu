@@ -14,14 +14,3 @@
 .text-keyword {
     color: #00dd00;
 }
-.side-container {
-    padding: 1.39em 0;
-    font-size: 3em;
-    text-align: right;
-    flex-basis: 50%;
-}
-.side-item {
-    padding: .25em 0;
-    font-weight: bold;
-    color: #b3b3b3;
-}

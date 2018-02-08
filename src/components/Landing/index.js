@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 
+import Nav from '../Navigation'
+
 import './styles.css'
 
-class Home extends Component {
+class Landing extends Component {
     render = () =>
       <div className="home-container">
         <div className="text-container">
@@ -19,15 +21,8 @@ class Home extends Component {
           conducting research and looking to <a className="text-keyword"> hire </a>
           and <a className="text-keyword"> collaborate</a>.</div>
         </div>
-        <div className="side-container">
-          <div className="side-item">Lab</div>
-          <div className="side-item">Publications</div>
-          <div className="side-item">Reading</div>
-          <div className="side-item">Collaborative</div>
-          <div className="side-item">Work</div>
-          <div className="side-item">Content</div>
-        </div>
+        <Nav />
       </div>
 }
 
-export default Home
+export default Landing
