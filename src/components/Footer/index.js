@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import FooterItem from './FooterItem'
 
+import { foot } from '../../config'
 import './styles.css'
 
 class Footer extends Component {
@@ -8,9 +10,7 @@ class Footer extends Component {
     // Replace with dynamic content from admin-on-rest
     render = () =>
       <footer className="footer">
-        <div className="footer-item">jeff.seemann@uconn.edu</div>
-        <div className="footer-item">+1 860 555 5555</div>
-        <div className="footer-item">123 Drury Lane, Storrs, CT 06269</div>
+        { foot.map((item, i) => <FooterItem index={i} key={item} item={item} />) }
       </footer>
 }
 
