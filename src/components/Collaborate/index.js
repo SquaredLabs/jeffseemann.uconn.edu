@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 import './styles.css'
 
-class Work extends Component {
+class Collaborate extends Component {
     render = () =>
       <div>
       </div>
 }
 
-export default Work
+export default Collaborate

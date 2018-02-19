@@ -1,4 +1,6 @@
 .main-container {
     padding: 0 4em;
     min-height: 90vh;
+
+    display: flex;
 }

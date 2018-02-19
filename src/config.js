@@ -2,7 +2,7 @@ export const nav = [
   {
     name: 'lab',
     routeName: 'lab',
-    link: '/lab',
+    link: '/',
     text: 'Lab'
   },
   {
@@ -18,9 +18,9 @@ export const nav = [
     text: 'Reading'
   },
   {
-    name: 'collaborative',
-    routeName: 'collaborative',
-    link: '/collaborative',
+    name: 'collaborate',
+    routeName: 'collaborate',
+    link: '/collaborate',
     text: 'Collaborate'
   },
   {

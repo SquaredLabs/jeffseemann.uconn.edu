@@ -4,7 +4,8 @@ import './styles.css'
 
 class Content extends Component {
     render = () =>
-      <div>Content Page</div>
+      <div>
+      </div>
 }
 
 export default Content

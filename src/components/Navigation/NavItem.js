@@ -5,9 +5,9 @@ import './styles.css'
 
 class NavItem extends Component {
   render () {
-    const { text, link, index } = this.props
+    const { text, link } = this.props
 
-    return <div className="nav-item" index={index}>
+    return <div className="nav-item" onClick={this.props.onClick}>
       <NavLink to={link}>
         {text}
       </NavLink>

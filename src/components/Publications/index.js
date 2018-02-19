@@ -4,7 +4,8 @@ import './styles.css'
 
 class Publications extends Component {
     render = () =>
-      <div></div>
+      <div>
+      </div>
 }
 
 export default Publications
