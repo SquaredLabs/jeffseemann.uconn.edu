@@ -7,9 +7,13 @@
 .nav-item {
     padding: .25em 0;
 }
-
 a {
     text-decoration: none;
     font-weight: bold;
+}
+a.first {
+    color: #49ea7f;
+}
+a.rest {
     color: #b3b3b3;
 }

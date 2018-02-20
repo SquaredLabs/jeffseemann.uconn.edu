@@ -23,7 +23,8 @@ class Navigation extends Component {
 
     return <div className="nav-container">
       { navItems.map((item, i) =>
-        <NavItem key={item.name} onClick={() => this.updateSelected(i)} {...item} />) }
+        <NavItem index={i} key={item.name}
+          onClick={() => this.updateSelected(i)} {...item} />) }
     </div>
   }
 }
