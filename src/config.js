@@ -42,3 +42,10 @@ export const foot = [
   '+1 860 555 5555',
   '123 Drury Lane, Storrs, CT 06269'
 ]
+
+export const colors = {
+  uconnBlue: '#0f1938',
+  siteGreen: '#49ea7f',
+  siteGray: '#5b605d',
+  textWhite: '#fefffa'
+}

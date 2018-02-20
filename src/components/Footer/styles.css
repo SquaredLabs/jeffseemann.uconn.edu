@@ -1,12 +1,12 @@
 .footer {
     padding: 0 2em;
     min-height: 10vh;
-    background-color: #3d3d3d;
+    background-color: #5b605d;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 .footer-item {
-    color: white;
+    color: #fefffa;
 }
