@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 import './styles.css'
 
-class Content extends Component {
+class About extends Component {
     render = () =>
       <div>
       </div>
 }
 
-export default Content
+export default About

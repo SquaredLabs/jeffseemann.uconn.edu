@@ -10,7 +10,8 @@ import Publications from './components/Publications'
 import Reading from './components/Reading'
 import Collaborate from './components/Collaborate'
 import Work from './components/Work'
-import Content from './components/Content'
+import Courses from './components/Courses'
+import About from './components/About'
 import NotFound from './components/NotFound'
 
 import Navigation from './components/Navigation'
@@ -38,7 +39,8 @@ const App = () =>
           <Route path='/reading' component={Reading} />
           <Route path='/collaborate' component={Collaborate} />
           <Route path='/work' component={Work} />
-          <Route path='/content' component={Content} />
+          <Route path='/content' component={Courses} />
+          <Route path='/about' component={About} />
           <Route component={NotFound} />
         </Switch>
       </Layout>
