@@ -1,0 +1,48 @@
+.reading-container {
+    flex-basis: 50%;
+    min-height: 100vh;
+}
+.name-header {
+    margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1.7em;
+    font-size: 3.69em;
+}
+.now-reading-container {
+
+}
+.book {
+    display: flex;
+    justify-content: space-between;
+}
+.right {
+    padding-left: .7em;
+}
+.header {
+    padding-top: 1.25em;
+    padding-bottom: .4em;
+    font-size: 1.44em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+img {
+    max-width: 9.4em;
+    max-height: 14.2em;
+    padding-right: .7em;
+}
+.past-reading-book {
+    padding-bottom: .88em;
+}
+.title {
+    font-size: 2.31em;
+    font-weight: bold;
+}
+.author-isbn {
+    padding: .35em 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: .87em;
+}
+.description {
+    font-size: .87em;
+}
