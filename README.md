@@ -3,11 +3,14 @@ Website highlighting research done by Jeffrey Seemann.
 
 ## Technology Stack
 Before working on this project, you should be familiar with the following protocols and technologies:
-- [Admin On Rest](https://marmelab.com/admin-on-rest/)
+- [Admin-On-Rest](https://marmelab.com/admin-on-rest/)
 - [ESLint](https://eslint.org/)
+- [Docker](https://docs.docker.com/engine/docker-overview/)
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en/)
 - [Npm](https://www.npmjs.com/)
+- [PostgreSQL](https://www.postgresql.org/docs/10/static/index.html)
+- [PostgREST](https://postgrest.com/en/v4.4/intro.html)
 - [React](https://reactjs.org/)
 - [React Router](https://reacttraining.com/react-router/)
 - [Redux](https://redux.js.org/)
@@ -16,10 +19,11 @@ Before working on this project, you should be familiar with the following protoc
 - [Yarn](https://yarnpkg.com/en/)
 
 ## Set Up
-Project set up should be operating system independent. Please contact the lead developer or update the documentation if set up varies by machine.
+Project set up should be operating system independent with the use of Docker. Please contact the lead developer or update the documentation if set up varies by machine.
 
 ### Software Prerequisites
 Please have the following installed on your machine:
+- [Docker CE](https://store.docker.com/search?type=edition&offering=community)
 - [Git](https://git-scm.com/downloads)
 - [Node](https://nodejs.org/en/download/)
 - [Yarn](https://yarnpkg.com/lang/en/docs/install/)
