@@ -5,7 +5,6 @@ import './styles.css'
 class Lab extends Component {
     render = () =>
       <div className="lab-container">
-        <h1 className="name-header">Jeff Seemann</h1>
         <div>
           Jeff Seemann has been an active and respected member of
           the nationwide research community for nearly four decades.

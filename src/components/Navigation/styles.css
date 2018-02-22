@@ -1,11 +1,11 @@
 .nav-container {
-    padding: 1.39em 0;
-    font-size: 3em;
+    padding: .81em 0;
+    font-size: 3.69em;
     text-align: right;
     flex-basis: 50%;
 }
 .nav-item {
-    padding: .25em 0;
+    padding: .19em 0;
 }
 a {
     text-decoration: none;

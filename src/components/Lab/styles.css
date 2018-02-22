@@ -1,12 +1,7 @@
 .lab-container {
+    padding: 14em 0;
     flex-basis: 50%;
-}
-.name-header {
-    margin: 0;
-    padding: 2em 0;
-    
-    font-size: 3em;
-    color: #5b605d;
+    min-height: 100%;
 }
 .text-keyword {
     color: #49ea7f;
