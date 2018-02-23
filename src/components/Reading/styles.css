@@ -25,12 +25,15 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-img {
+.now-reading-book {
     max-width: 9.4em;
     max-height: 14.2em;
     padding-right: .7em;
 }
 .past-reading-book {
+    max-width: 9.4em;
+    max-height: 14.2em;
+    padding-right: .7em;
     padding-bottom: .88em;
 }
 .title {

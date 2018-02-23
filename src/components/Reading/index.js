@@ -6,9 +6,7 @@ import PastReading from './PastReading'
 
 import './styles.css'
 
-const styles = {
-  color: colors.siteGray
-}
+const styles = { color: colors.siteGray }
 
 class Reading extends Component {
     render = () =>

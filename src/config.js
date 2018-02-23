@@ -54,7 +54,8 @@ export const colors = {
   siteGreen: '#49ea7f',
   siteGray: '#5b605d',
   siteWhite: '#fefffa',
-  siteBlack: '#313a38'
+  siteBlack: '#313a38',
+  profileWhite: '#d7e2dc'
 }
 
 export const nowReading = {
@@ -128,5 +129,68 @@ export const pastReading = [
     isbn: '978-1101967683',
     description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
     path: 'assets/img/theWhistler.jpg'
+  }
+]
+
+export const labProfiles = [
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
+  },
+  {
+    name: 'Daniel Schwartz',
+    major: 'Physiology and Neurobiology',
+    position: 'Associate Professor',
+    path: 'assets/img/danSchwartz.png'
   }
 ]

@@ -1,7 +1,15 @@
 .lab-container {
-    padding: 14em 0;
     flex-basis: 50%;
     min-height: 100%;
+}
+.first-container {
+    padding-top: 14em;
+}
+.second-container {
+}
+.third-container {
+}
+.fourth-container {
 }
 .text-keyword {
     color: #49ea7f;

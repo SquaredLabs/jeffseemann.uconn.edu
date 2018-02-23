@@ -13,7 +13,7 @@ class NowReading extends Component {
     return <div className="now-reading-container">
       <div className="header" style={blackStyle}>Now Reading</div>
       <div className="book">
-        <img alt={title} src={path}></img>
+        <img className="now-reading-book" alt={title} src={path}></img>
         <div className="right">
           <div className="title" style={blackStyle}>{title}</div>
           <div className="author-isbn" style={grayStyle}>

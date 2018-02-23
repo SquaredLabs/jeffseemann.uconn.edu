@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import { labProfiles } from '../../config'
+
+import ProfilePicture from '../ProfilePicture'
 
 import './styles.css'
 
 class Lab extends Component {
-    render = () =>
-      <div className="lab-container">
+  render () {
+    return <div className="lab-container">
+      <div className="first-container">
         <div>
           Jeff Seemann has been an active and respected member of
           the nationwide research community for nearly four decades.
@@ -23,6 +27,15 @@ class Lab extends Component {
           and <a className="text-keyword"> collaborate</a>.
         </div>
       </div>
+      <div className="second-container">
+        <ProfilePicture profiles={labProfiles} />
+      </div>
+      <div className="third-container">
+      </div>
+      <div className="fourth-container">
+      </div>
+    </div>
+  }
 }
 
 export default Lab
