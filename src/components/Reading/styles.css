@@ -4,7 +4,7 @@
 }
 .name-header {
     margin: 0;
-    padding-top: 1em;
+    padding-top: .17em;
     padding-bottom: 1.7em;
     font-size: 3.69em;
 }
@@ -53,4 +53,8 @@
 }
 .description {
     font-size: .87em;
+}
+.uconn-logo{
+    width: 3.7em;
+    padding-top: 2.3em;
 }
