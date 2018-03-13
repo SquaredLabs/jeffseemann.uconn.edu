@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { colors, nowReading } from '../../config'
+import { apiFetchGeneric } from '../../utils'
+import { colors, apiUri } from '../../config'
 
 import './styles.css'
 
@@ -7,22 +8,43 @@ const grayStyle = { color: colors.siteGray }
 const blackStyle = { color: colors.siteBlack }
 
 class NowReading extends Component {
-  render () {
-    const { title, author, isbn, description, path } = nowReading
+  constructor (props) {
+    super(props)
 
-    return <div className="now-reading-container">
-      <div className="header" style={blackStyle}>Now Reading</div>
-      <div className="book">
-        <img className="now-reading-book" alt={title} src={path}></img>
+    this.state = {
+      books: []
+    }
+  }
+
+  componentDidMount () {
+    this.nowReading()
+  }
+
+  async nowReading () {
+    const response = await apiFetchGeneric(apiUri.nowReading.protocol,
+      apiUri.nowReading.hostname, apiUri.nowReading.pathname, apiUri.nowReading.query)
+    this.setState({ books: response.data })
+  }
+
+  render () {
+    const books = this.state.books.map((book) => {
+      const uri = apiUri.nowReading.protocol + '//' + apiUri.nowReading.hostname + book.image.data.url
+      return <div className="book" key={book.id}>
+        <img className="now-reading-img" alt={book.title} src={uri}></img>
         <div className="right">
-          <div className="title" style={blackStyle}>{title}</div>
+          <div className="title" style={blackStyle}>{book.title}</div>
           <div className="author-isbn" style={grayStyle}>
-            <div>{author}</div>
-            <div>ISBN {isbn}</div>
+            <div>{book.author}</div>
+            <div>ISBN {book.isbn}</div>
           </div>
-          <div className="description" style={blackStyle}>{description}</div>
+          <div className="description" style={blackStyle}>{book.description}</div>
         </div>
       </div>
+    })
+
+    return <div>
+      <div className="header" style={blackStyle}>Now Reading</div>
+      <div className="books-wrapper">{books}</div>
     </div>
   }
 }

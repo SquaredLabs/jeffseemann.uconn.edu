@@ -14,7 +14,7 @@ import Courses from './components/Courses'
 import About from './components/About'
 import NotFound from './components/NotFound'
 
-import Navigation from './components/Navigation'
+// import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 
 import './App.css'
@@ -24,7 +24,7 @@ const Layout = ({ children }) =>
   <div>
     <main className="main-container">
       { children }
-      <Navigation />
+      {/* <Navigation /> */}
     </main>
     <Footer />
   </div>

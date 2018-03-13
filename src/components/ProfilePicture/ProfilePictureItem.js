@@ -12,12 +12,12 @@ class ProfilePictureItem extends Component {
 
     return <div className="profile-container">
       <img className="profile-picture-image" alt={name} src={path}></img>
-      <div class="overlay">
-        <div class="bio">
-          <div class="name" style={nameStyle}>{name}</div>
-          <div class="dash" style={bioStyle}>-</div>
-          <div class="major" style={bioStyle}>{major}</div>
-          <div class="position" style={bioStyle}>{position}</div>
+      <div className="overlay">
+        <div className="bio">
+          <div className="name" style={nameStyle}>{name}</div>
+          <div className="dash" style={bioStyle}>-</div>
+          <div className="major" style={bioStyle}>{major}</div>
+          <div className="position" style={bioStyle}>{position}</div>
         </div>
       </div>
     </div>

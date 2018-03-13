@@ -1,5 +1,5 @@
 .reading-container {
-    flex-basis: 50%;
+    /* flex-basis: 50%; */
     min-height: 100vh;
 }
 .name-header {
@@ -8,15 +8,20 @@
     padding-bottom: 1.7em;
     font-size: 3.69em;
 }
-.now-reading-container {
-
+.books-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .book {
     display: flex;
-    justify-content: space-between;
+    padding: .5em;
 }
 .right {
+    max-width: 24.5em;
+    max-height: 14.2em;
     padding-left: .7em;
+    overflow: hidden;
 }
 .header {
     padding-top: 1.25em;
@@ -25,14 +30,14 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-.now-reading-book {
-    max-width: 9.4em;
-    max-height: 14.2em;
+.now-reading-img {
+    width: 9.4em;
+    height: 14.2em;
     padding-right: .7em;
 }
-.past-reading-book {
-    max-width: 9.4em;
-    max-height: 14.2em;
+.past-reading-img {
+    width: 9.4em;
+    height: 14.2em;
     padding-right: .7em;
     padding-bottom: .88em;
 }

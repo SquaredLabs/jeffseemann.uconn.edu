@@ -58,80 +58,6 @@ export const colors = {
   profileWhite: '#d7e2dc'
 }
 
-export const nowReading = {
-  title: 'Little Fires Everywhere',
-  author: 'Celeste Ng',
-  isbn: '978-3-16-148410-0',
-  description: 'The role of a good cook ware in the preparation of a sumptuous meal cannot be overemphasized. When one consider purchasing a good cookware the first point that comes to the mind is the budget. Buying a standard cookware within one’s budget and at the same time obtaining all the pieces and features one has in mind is no simple task.',
-  path: 'assets/img/littleFiresEverywhere.jpg'
-}
-
-export const pastReading = [
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  },
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  },
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  },
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  },
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  },
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  },
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  },
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  },
-  {
-    title: 'The Whistler',
-    author: 'John Grisham',
-    isbn: '978-1101967683',
-    description: 'We expect our judges to be honest and wise. Their integrity is the bedrock of the entire judicial system. We trust them to ensure fair trials, to protect the rights of all litigants, to punish those who do wrong, and to oversee the flow of justice. But what happens when a judge bends the law or takes a bribe?',
-    path: 'assets/img/theWhistler.jpg'
-  }
-]
-
 export const labProfiles = [
   {
     name: 'Daniel Schwartz',
@@ -194,3 +120,18 @@ export const labProfiles = [
     path: 'assets/img/danSchwartz.png'
   }
 ]
+
+export const apiUri = {
+  nowReading: {
+    protocol: 'http:',
+    hostname: 'jeffwebsite.test',
+    pathname: '/api/1.1/tables/reading/rows',
+    query: { 'filters[now][eq]': 1 }
+  },
+  pastReading: {
+    protocol: 'http:',
+    hostname: 'jeffwebsite.test',
+    pathname: '/api/1.1/tables/reading/rows',
+    query: { 'filters[now][eq]': 0 }
+  }
+}
