@@ -7,3 +7,9 @@
     align-items: center;
     justify-content: space-around;
 }
+.item {
+    font-size: .875em;
+}
+.DnDBy {
+    max-height: 31px;
+}

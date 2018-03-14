@@ -46,7 +46,8 @@ export const nav = [
 export const foot = [
   'jeff.seemann@uconn.edu',
   '+1 860 555 5555',
-  '123 Drury Lane, Storrs, CT 06269'
+  '123 Drury Lane, Storrs, CT 06269',
+  'assets/img/DAndDBy.svg'
 ]
 
 export const colors = {

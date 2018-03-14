@@ -11,7 +11,9 @@ class FooterItem extends Component {
   render () {
     const { item } = this.props
 
-    return <div style={styles}>{item}</div>
+    return item.substr(0, 6) === 'assets'
+      ? <img className="DnDBy" alt={item} src={item}></img>
+      : <div className="item" style={styles}>{item}</div>
   }
 }
 
