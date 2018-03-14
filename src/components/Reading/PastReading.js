@@ -32,7 +32,7 @@ class PastReading extends Component {
         alt={book.title} src={uri}></img>
     })
 
-    return <div>
+    return <div className="past-reading-container">
       <div className="header" style={blackStyle}>Past Reading</div>
       <div>{books}</div>
     </div>
