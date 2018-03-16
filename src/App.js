@@ -22,7 +22,7 @@ import './App.css'
 // Component that will hold body of landing page
 const Layout = ({ children }) =>
   <div>
-    <main className="main-container">
+    <main>
       { children }
       {/* <Navigation /> */}
     </main>

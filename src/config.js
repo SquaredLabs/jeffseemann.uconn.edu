@@ -59,70 +59,18 @@ export const colors = {
   profileWhite: '#d7e2dc'
 }
 
-export const labProfiles = [
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  },
-  {
-    name: 'Daniel Schwartz',
-    major: 'Physiology and Neurobiology',
-    position: 'Associate Professor',
-    path: 'assets/img/danSchwartz.png'
-  }
-]
-
 export const apiUri = {
+  labProfiles: {
+    protocol: 'http:',
+    hostname: 'jeffwebsite.test',
+    pathname: '/api/1.1/tables/lab_members/rows',
+    query: { 'filters[active][eq]': 1 }
+  },
+  labContent: {
+    protocol: 'http:',
+    hostname: 'jeffwebsite.test',
+    pathname: '/api/1.1/tables/lab_content/rows'
+  },
   nowReading: {
     protocol: 'http:',
     hostname: 'jeffwebsite.test',

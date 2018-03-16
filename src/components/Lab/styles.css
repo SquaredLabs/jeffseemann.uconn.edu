@@ -1,16 +1,59 @@
 .lab-container {
-    flex-basis: 50%;
     min-height: 100%;
 }
 .first-container {
-    padding-top: 14em;
+    padding: 0 5.875em;
+    display: flex;
+    min-height: 100vh;
 }
 .second-container {
+    min-height: 100vh;
 }
 .third-container {
+    padding-left: 11.25em;
+    padding-right: 5.875em;
+    display: flex;
+    justify-content: space-evenly;
+    height: 115vh;
 }
 .fourth-container {
+    display: flex;
+    align-items: center;
+    padding: 0 5.875em;
+    padding-top: 19.5em;
+    min-height: 100vh;
+}
+.half {
+    flex-basis: 50%;
+}
+.third {
+    flex-basis: 33.33%;
+}
+.half-1st-text {
+    padding-top: 10.75em;
 }
 .text-keyword {
     color: #49ea7f;
+}
+.uconn-logo-lab {
+    width: 95px;
+    padding-top: 3.7em;
+}
+.landing-description {
+    font-size: 1.438em;
+}
+.bottom-description {
+    font-weight: bold;
+    font-size: 2.313em;
+}
+.lab-description {
+    padding: 8.75em 1.92em 1.25em 1.92em;
+    font-size: 1.125em;
+    height: 19em;
+}
+.center-image-spacing {
+    padding-top: 29.2em;
+}
+.right-image-spacing {
+    padding-top: 35.2em;
 }
