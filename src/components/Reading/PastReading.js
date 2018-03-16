@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetchGeneric } from '../../utils'
+import { apiFetchGeneric, apiImageUrl } from '../../utils'
 import { colors, apiUri } from '../../config'
 
 import './styles.css'
@@ -27,7 +27,7 @@ class PastReading extends Component {
 
   render () {
     const books = this.state.books.map((book) => {
-      const uri = apiUri.nowReading.protocol + '//' + apiUri.nowReading.hostname + book.image.data.url
+      const uri = apiImageUrl(apiUri.nowReading, book.image.data.url)
       return <img className="past-reading-img" key={book.id}
         alt={book.title} src={uri}></img>
     })
