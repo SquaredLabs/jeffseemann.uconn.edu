@@ -15,3 +15,7 @@ export function apiFetchGeneric (protocol, hostname, pathname, query, ...args) {
     .then((response) => response.json())
     .catch((error) => { throw error })
 }
+
+export function apiImageUrl (obj, imageurl) {
+  return obj.protocol + '//' + obj.hostname + imageurl
+}

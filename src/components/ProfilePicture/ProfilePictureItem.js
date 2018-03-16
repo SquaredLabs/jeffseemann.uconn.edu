@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { colors } from '../../config'
+import { colors, apiUri } from '../../config'
+import { apiImageUrl } from '../../utils'
 
 import './styles.css'
 
@@ -8,16 +9,20 @@ const bioStyle = { color: colors.profileWhite }
 
 class ProfilePictureItem extends Component {
   render () {
-    const { profile: { name, major, position, path } } = this.props
+    const { profile, title, desc, url } = this.props
+    const header = this.props.profile ? profile.name : title
+    const subheader = this.props.profile ? profile.major : desc
+    const body = this.props.profile ? profile.position : null
+    const uri = url || apiImageUrl(apiUri.labProfiles, profile.image.data.url)
 
     return <div className="profile-container">
-      <img className="profile-picture-image" alt={name} src={path}></img>
+      <img className={profile ? 'profile-picture-image' : 'lab-about-img'} alt={uri} src={uri}></img>
       <div className="overlay">
-        <div className="bio">
-          <div className="name" style={nameStyle}>{name}</div>
+        <div className={profile ? 'bio' : 'bio-alt'}>
+          <div className="name" style={nameStyle}>{header}</div>
           <div className="dash" style={bioStyle}>-</div>
-          <div className="major" style={bioStyle}>{major}</div>
-          <div className="position" style={bioStyle}>{position}</div>
+          <div className={profile ? 'major' : 'subheader'} style={bioStyle}>{subheader}</div>
+          <div className="position" style={bioStyle}>{body}</div>
         </div>
       </div>
     </div>
