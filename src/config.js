@@ -82,5 +82,17 @@ export const apiUri = {
     hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/reading/rows',
     query: { 'filters[now][eq]': 0 }
+  },
+  collaborators: {
+    protocol: 'http:',
+    hostname: 'jeffwebsite.test',
+    pathname: '/api/1.1/tables/collaborators/rows',
+    query: { 'filters[sponsor][eq]': 0 }
+  },
+  sponsors: {
+    protocol: 'http:',
+    hostname: 'jeffwebsite.test',
+    pathname: '/api/1.1/tables/collaborators/rows',
+    query: { 'filters[sponsor][eq]': 1 }
   }
 }

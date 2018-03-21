@@ -1,0 +1,169 @@
+/* index.js */
+/* Desktop */
+.collab-container {
+    padding: 0 5.875em;
+}
+.collab-name-header {
+    margin: 0;
+    padding-top: .17em;
+    padding-bottom: 2.05em;
+    font-size: 3.69em;
+}
+.collab-welcome-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.collab-name {
+    font-weight: bold;
+    font-size: 3.69em;
+}
+.collab-plus {
+    font-weight: bold;
+    font-size: 3.69em;
+    padding: 0 .5em;
+}
+.Rectangle {
+    width: 236px;
+    height: 236px;
+    background-color: #ffffff;
+    border: solid 3px #313a38;
+    border-style: dashed;
+}
+.collab-slogan-container {
+    padding-top: 5.938em;
+    padding-bottom: 3.688em;
+}
+.collab-slogan {
+    font-weight: bold;
+    font-size: 2.313em;
+}
+.collab-collab {
+    font-size: 2.313em;
+    padding-bottom: 1em;   
+}
+/* Tablet */
+@media screen and (min-width: 776px) and (max-width: 1025px) {
+    .collab-container {
+        padding: 0 1.250em;
+    }
+    .Rectangle {
+        width: 206px;
+        height: 206px;
+    }
+}
+/* Tablet - Seemann Lab + [ ] resize */
+@media screen and (min-width: 481px) and (max-width: 775px) {
+    .collab-container {
+        padding: 0 1em;
+    }
+    .collab-name {
+        font-size: 2.60em;
+    }
+    .collab-plus {
+        font-size: 2.60em;
+    }
+    .Rectangle {
+        width: 176px;
+        height: 176px;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .collab-container {
+        padding: 0 .875em;
+    }
+    .collab-name-header {
+        font-size: 2.313em;
+    }
+    .collab-welcome-banner {
+        flex-direction: column-reverse;
+    }
+    .collab-name {
+        font-size: 2.313em;
+    }
+    .collab-plus {
+        font-size: 2.313em;
+    }
+    .Rectangle {
+        width: 139px;
+        height: 139px;
+    }
+    .collab-slogan {
+        font-size: 1.813em;
+    }
+    .collab-collab {
+        font-size: 1.438em;
+        padding-bottom: .875em;
+    }
+}
+
+/* Collaborators.js */
+/* Desktop and Tablet*/
+.collaborator-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sponsor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sponsor-img {
+    padding: 3.925em 1.688em 5.938em 1.688em;
+    filter: grayscale(100%);
+    opacity: 0.3;
+}
+/* Mobile */
+@media screen and (max-width: 414px) {
+    .sponsor-container {
+        flex-direction: column;
+    }
+    .sponsor-img {
+        padding: 0.719em 0; 
+    }
+    .sponsor-img:first-child {
+        padding-top: 1.5em;
+    }
+}
+
+/* Partner.js */
+/* Desktop */
+.partner-container {
+    display: flex;
+    padding: .75em 5.125em .75em 0em;
+}
+.partner-img {
+    padding-top: 1.688em;
+    padding-right: .5em;
+}
+.partner-title {
+    font-size: 1.438em;
+    font-weight: bold;
+}
+.partner-subtitle {
+    display: inline;
+    font-size: .875em;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .partner-container {
+        padding-right: 3.188em;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 414px) {
+    .partner-container {
+        padding: .875em 0;
+    }
+    .partner-img {
+        padding-top: 1.438em;
+    }
+    .partner-title {
+        font-size: 1.125em;
+    }
+    .partner-subtitle {
+        font-size: .875em;
+    }
+}
