@@ -1,6 +1,7 @@
+/* Desktop */
 .footer {
     padding: 0 2em;
-    min-height: 10vh;
+    min-height: 3.5em;
     background-color: #5b605d;
 
     display: flex;
@@ -8,8 +9,53 @@
     justify-content: space-around;
 }
 .item {
+    padding: 0 1em;
     font-size: .875em;
 }
 .DnDBy {
-    max-height: 31px;
+    padding-left: 10em;
+    max-height: 30.3px;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .footer {
+        padding: 0 1.250em;
+        min-height: 5.938em;
+
+        align-items: initial;
+    }
+    .item {
+        padding-top: 1.438em;
+        padding-bottom: 3.375em;
+    }
+    .DnDBy {
+        align-content: center;
+        padding-top: 2.063em;
+        padding-bottom: 2em;
+        padding-left: 4em;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 0 .875em;
+        min-height: 15.688em;
+
+        flex-direction: column;
+        align-items: initial;
+        justify-content: flex-start;
+    }
+    .item {
+        padding: .438em 0;
+    }
+    .item:first-child {
+        padding-top: 1.438em;
+    }
+    .DnDBy {
+        align-content: center;
+        max-height: 30px;
+        padding-top: 4.5em;
+        padding-bottom: 2.313em;
+        padding-left: 0;
+    }
 }
