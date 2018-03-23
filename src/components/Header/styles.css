@@ -1,0 +1,17 @@
+/* Desktop, Tablet */
+.uconn-logo{
+    width: 3.681em;
+    padding-top: 2.3em;
+}
+.header-name {
+    margin: 0;
+    padding-top: .17em;
+    padding-bottom: 2.051em;
+    font-size: 3.69em;
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .header-name {
+        font-size: 2.313em;
+    }
+}

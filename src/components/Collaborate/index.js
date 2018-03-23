@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { colors } from '../../config'
 
+import Header from '../Header'
 import Collaborators from './Collaborators'
 
 import './styles.css'
@@ -12,8 +13,7 @@ const green = { color: colors.siteGreen }
 class Collaborate extends Component {
     render = () =>
       <div className="collab-container">
-        <img className="uconn-logo" alt="uconn-logo" src="assets/img/uconn-wordmark-single-black.png"></img>
-        <h1 className="collab-name-header" style={gray}>Jeff Seemann</h1>
+        <Header />
         <div className="collab-welcome-banner">
           <div>
             <div className="collab-name" style={black}>Seemann</div>

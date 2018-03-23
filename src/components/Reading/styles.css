@@ -1,13 +1,6 @@
 .reading-container {
-    /* flex-basis: 50%; */
-    padding: 0 5.875em;
+    padding: 0 5.938em;
     min-height: 100vh;
-}
-.name-header {
-    margin: 0;
-    padding-top: .17em;
-    padding-bottom: 1.7em;
-    font-size: 3.69em;
 }
 .books-wrapper {
     display: flex;
@@ -54,10 +47,6 @@
 }
 .description {
     font-size: .87em;
-}
-.uconn-logo{
-    width: 3.681em;
-    padding-top: 2.3em;
 }
 .past-reading-container {
     padding-bottom: 3.7em;
