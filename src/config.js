@@ -94,5 +94,11 @@ export const apiUri = {
     hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/collaborators/rows',
     query: { 'filters[sponsor][eq]': 1 }
+  },
+  positions: {
+    protocol: 'http:',
+    hostname: 'jeffwebsite.test',
+    pathname: '/api/1.1/tables/work/rows',
+    query: { 'filters[active][eq]': 1 }
   }
 }
