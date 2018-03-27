@@ -72,9 +72,9 @@ class Lab extends Component {
   }
 
   render () {
-    const uriImageLeft = apiImageUrl(apiUri.labContent, this.state.content.first_image.data.url)
-    const uriImageCenter = apiImageUrl(apiUri.labContent, this.state.content.second_image.data.url)
-    const uriImageRight = apiImageUrl(apiUri.labContent, this.state.content.third_image.data.url)
+    const uriImageLeft = apiImageUrl(this.state.content.first_image.data.url)
+    const uriImageCenter = apiImageUrl(this.state.content.second_image.data.url)
+    const uriImageRight = apiImageUrl(this.state.content.third_image.data.url)
 
     return <div className="lab-container">
       <div className="first-container">

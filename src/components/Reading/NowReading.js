@@ -28,7 +28,7 @@ class NowReading extends Component {
 
   render () {
     const books = this.state.books.map((book) => {
-      const uri = apiImageUrl(apiUri.nowReading, book.image.data.url)
+      const uri = apiImageUrl(book.image.data.url)
       return <div className="book" key={book.id}>
         <img className="now-reading-img" alt={book.title} src={uri}></img>
         <div className="right">

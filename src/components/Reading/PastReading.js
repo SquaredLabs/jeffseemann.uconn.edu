@@ -27,7 +27,7 @@ class PastReading extends Component {
 
   render () {
     const books = this.state.books.map((book) => {
-      const uri = apiImageUrl(apiUri.nowReading, book.image.data.url)
+      const uri = apiImageUrl(book.image.data.url)
       return <img className="past-reading-img" key={book.id}
         alt={book.title} src={uri}></img>
     })

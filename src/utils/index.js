@@ -1,5 +1,8 @@
 import url from 'url'
 
+export const siteProtocol = 'http:'
+export const siteHostname = 'jeffwebsite.test'
+
 /**
  * Generic fetch to make api calls
  * @param {string} protocol - 'http' or 'https'
@@ -16,6 +19,20 @@ export function apiFetchGeneric (protocol, hostname, pathname, query, ...args) {
     .catch((error) => { throw error })
 }
 
-export function apiImageUrl (obj, imageurl) {
+/**
+ * Fetch relative to site domain to make api calls *internally*
+ * @param {*} pathname - example: '/p/a/t/h'
+ * @param {*} query - example: {'query':'string'}
+ * @param {*} args - headers
+ */
+export function apiFetch (pathname, query, ...args) {
+  return apiFetchGeneric(siteProtocol, siteHostname, pathname, query, ...args)
+}
+
+export function apiImageUrlGeneric (obj, imageurl) {
   return obj.protocol + '//' + obj.hostname + imageurl
+}
+
+export function apiImageUrl (imageurl) {
+  return siteProtocol + '//' + siteHostname + imageurl
 }

@@ -13,7 +13,7 @@ class ProfilePictureItem extends Component {
     const header = this.props.profile ? profile.name : title
     const subheader = this.props.profile ? profile.major : desc
     const body = this.props.profile ? profile.position : null
-    const uri = url || apiImageUrl(apiUri.labProfiles, profile.image.data.url)
+    const uri = url || apiImageUrl(profile.image.data.url)
 
     return <div className="profile-container">
       <img className={profile ? 'profile-picture-image' : 'lab-about-img'} alt={uri} src={uri}></img>

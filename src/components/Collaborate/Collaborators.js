@@ -38,7 +38,7 @@ class Collaborators extends Component {
       <Partner key={i} profile={partner} />
     )
     const sponsors = this.state.sponsors.map((sponsor, i) => {
-      const uri = apiImageUrl(apiUri.sponsors, sponsor.logo.data.url)
+      const uri = apiImageUrl(sponsor.logo.data.url)
       return <img className="sponsor-img" alt={sponsor.name} src={uri} />
     })
 
