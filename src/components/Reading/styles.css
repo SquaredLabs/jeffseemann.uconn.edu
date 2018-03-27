@@ -1,7 +1,10 @@
+/* index.js */
+/* Desktop */
 .reading-container {
     padding: 0 5.938em;
-    min-height: 100vh;
 }
+/* NowReading.js */
+/* Desktop */
 .books-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -15,12 +18,12 @@
     max-width: 24.5em;
     max-height: 14.2em;
     padding-left: .7em;
-    overflow: hidden;
+    overflow: overlay;
 }
 .header {
     padding-top: 1.25em;
-    padding-bottom: .4em;
-    font-size: 1.44em;
+    padding-bottom: 0.391em;
+    font-size: 1.438em;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -28,12 +31,6 @@
     width: 9.4em;
     height: 14.2em;
     padding-right: .7em;
-}
-.past-reading-img {
-    width: 9.4em;
-    height: 14.2em;
-    padding-right: .7em;
-    padding-bottom: .88em;
 }
 .title {
     font-size: 2.31em;
@@ -48,6 +45,43 @@
 .description {
     font-size: .87em;
 }
+/* PastReading.js */
+/* Desktop */
+.past-reading-img {
+    width: 9.4em;
+    height: 14.2em;
+    padding-right: 1.063em;
+    padding-bottom: .875em;
+}
 .past-reading-container {
-    padding-bottom: 3.7em;
+    padding-bottom: 3.688em;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .reading-container {
+        padding: 0 1.250em;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .reading-container {
+        padding: 0 .875em;
+    }
+    .books-wrapper {
+        justify-content: initial;
+        padding-right: 4.813em;
+    }
+    .right {
+        display: none;
+    }
+    .now-reading-img {
+        width: 100%;
+        height: 100%;
+        max-width: 314px;
+    }
+    .past-reading-img {
+        padding-right: 0.938em;
+        width: calc(50% - 2 * .875em);
+        object-fit: cover;
+    }
 }
