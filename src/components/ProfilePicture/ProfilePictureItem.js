@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { colors, apiUri } from '../../config'
+import { colors } from '../../config'
 import { apiImageUrl } from '../../utils'
 
 import './styles.css'

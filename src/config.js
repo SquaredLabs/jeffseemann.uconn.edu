@@ -100,5 +100,8 @@ export const apiUri = {
     hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/work/rows',
     query: { 'filters[active][eq]': 1 }
+  },
+  about: {
+    pathname: '/api/1.1/tables/about/rows'
   }
 }
