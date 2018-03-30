@@ -50,6 +50,14 @@ create database jeffwebsite;
 quit;
 ```
 
+### Seed initial data and assets:
+Get an initial dump of Jeff's website to [import](https://s3.core.uconn.edu/minio/login).
+Download image assets and place in `Jeff-Website/cms/storage/`.
+```sh
+gunzip jeffwebsiteDatabase.sql.gz
+mysql < jeffwebsiteDatabase.sql
+```
+
 ### Install required php packages:
 These are just some of the required php packages. If you have to install more, please add them here. Refer to the documentation or logs for troubleshooting.
 ```sh

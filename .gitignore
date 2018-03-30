@@ -78,3 +78,6 @@ tags
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+### Database ###
+jeffwebsiteDatabase.sql
