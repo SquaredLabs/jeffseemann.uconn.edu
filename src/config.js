@@ -103,5 +103,8 @@ export const apiUri = {
   },
   about: {
     pathname: '/api/1.1/tables/about/rows'
+  },
+  courses: {
+    pathname: '/api/1.1/tables/courses/rows'
   }
 }

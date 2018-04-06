@@ -1,0 +1,286 @@
+/* index.js */
+/* Desktop */
+.courses-container {
+    display: grid;
+    padding-left: .688em;
+    padding-right: 5.938em;
+    grid-template-columns: 4em auto 4em;
+}
+.courses-container-extra {
+    grid-column: 1 / span 3;
+    padding-left: 5.25em;
+}
+.courses-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.courses-bottom-center {
+    grid-column-start: 2;
+    grid-column: 1 / span 3;
+}
+.courses-years-cover {
+    text-align: center;
+    font-size: 1.438em;
+}
+.courses-years-cover:hover {
+    cursor: pointer;
+}
+.courses-year {
+    padding: 0 1.031em;
+}
+.courses-year:hover {
+    cursor: pointer;
+}
+.courses-years-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.438em;
+    padding-top: 2.313em;
+    padding-bottom: 3.688em;
+}
+.courses-years-nav-empty {
+    font-size: 1.438em;
+    padding-top: 2.313em;
+}
+.courses-nextprev-container {
+    padding-top: 23.75em;
+    padding-right: .875em;
+    grid-area: 2 / 1 / 2 / auto;
+}
+.courses-next {
+    margin-bottom: 2.063em;
+    text-align: right;
+    position: sticky;
+    top: 10%;
+    font-size: .875em;
+}
+.courses-next:hover {
+    cursor: pointer;
+}
+.courses-prev {
+    margin-bottom: 2.063em;
+    text-align: right;
+    position: sticky;
+    top: 19%;
+    font-size: .875em;
+}
+.courses-prev:hover {
+    cursor: pointer;
+}
+.courses-totop-container {
+    padding-top: 23.75em;
+    grid-area: 2 / 3 / 2 / auto;
+}
+.courses-totop {
+    position: sticky;
+    top: 10%;
+    font-size: 1.438em;
+}
+.courses-totop:hover {
+    cursor: pointer;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .courses-container {
+        padding: 0 1.250em;
+        grid-template-columns: 4em auto 4em;
+    }
+    .courses-container-extra {
+        padding-left: initial;
+    }
+    .courses-totop-container {
+        padding-top: 21.5em;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .courses-container {
+        padding: 0em;
+        grid-template-columns: .875em auto 3.5em;
+    }
+    .courses-container-extra {
+        padding: 0 .875em;
+    }
+    .courses-wrapper {
+        grid-column: 2;
+        flex-direction: column;
+    }
+    .courses-nextprev-container {
+        padding-top: 22em;
+        padding-right: initial;
+    }
+    .courses-totop-container {
+        padding-right: .875em;
+    }
+    .courses-totop {
+        font-size: .875em;
+    }
+    .courses-years-nav {
+        padding-bottom: 2.688em;
+    }
+    .courses-year {
+        padding: 0 1.031em;
+        padding-bottom: 1em;
+    }
+    .courses-next-arrow {
+        margin-bottom: initial;
+        padding-bottom: 1.25em;
+    }
+    .courses-prev {
+        margin-bottom: initial;
+        padding-top: 2.5em;
+    }
+    .courses-rotate {
+        transform: rotate(-90deg);
+    }
+}
+
+/* CourseTile.js */
+/* Desktop */
+.coursetile-container {
+    padding-bottom: 3.668em;
+}
+/* This needs to change if for wider screens than 14 inch you'd like to
+ * display 3 courses in the same column
+ */
+.coursetile-container:nth-child(odd) {
+    padding-right: 5.375em;
+}
+.coursetile-year {
+    font-size: 3.668em;
+    padding-bottom: 0.237em;
+}
+.coursetile-semester-wrapper {
+    display: flex;
+    padding-left: 1.250em;
+}
+.coursetile-semester-container{
+    padding-right: 1.313em;
+}
+.coursetile-semester {
+    font-size: 1.438em;
+    font-weight: bold;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .coursetile-semester-wrapper {
+        padding-left: 1.125em;
+    }
+    .coursetile-semester-container {
+        padding-right: 1.125em;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .course-container {
+        padding-bottom: initial;
+    }
+    .coursetile-container:nth-child(odd) {
+        padding-right: initial;
+        padding-bottom: 2.313em;
+    }
+    .coursetile-year {
+        font-size: 2.313em;
+    }
+    .coursetile-semester-wrapper {
+        flex-direction: column;
+    }
+    .coursetile-semester-container {
+        padding-right: initial;
+        padding-bottom: 1.438em;
+    }
+    .coursetile-semester-container:last-child {
+        padding-bottom: initial;
+    }
+    .coursetile-semester {
+
+    }
+}
+
+/* Course.js */
+/* Desktop */
+.course-container {
+    display: flex;
+}
+.course-img-expand {
+    width: 12px;
+    height: 20px;
+    margin-top: 5.5em;
+    padding-right: .625em;
+}
+.course-img-expand:hover {
+    cursor: pointer;
+}
+.course-info-container {
+    max-width: 8.072em;
+}
+.course-name {
+    font-size: 1.438em;
+    font-weight: bold;
+    padding-top: .609em;
+    padding-bottom: 0.130em;
+}
+.course-signature {
+    font-size: .875em;
+    padding-bottom: 0.214em;
+}
+.course-professor {
+    font-size: .875em;
+    padding-bottom: 0.786em;
+}
+.course-description {
+    font-size: .875em;
+    font-weight: bold;
+}
+.course-description:hover {
+    cursor: pointer;
+}
+.course-description-text {
+    padding-top: .125em;
+    font-size: .875em;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .course-img-expand {
+        margin-top: 4.375em;
+        padding-right: .50em;
+    }
+    .course-info-container {
+        max-width: 6.154em;
+    }
+    .course-name {
+        font-size: 1.250em;
+    }
+    .course-signature {
+        font-size: .668em;
+    }
+    .course-professor {
+        font-size: .668em;
+    }
+    .course-description {
+        font-size: .668em;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .course-img-expand {
+        margin-top: 3.5em;
+        padding-right: .625em;
+    }
+    .course-name {
+        font-size: .875em;
+    }
+    .course-signature {
+        font-size: .668em;
+    }
+    .course-professor {
+        font-size: .668em;
+    }
+    .course-description {
+        font-size: .668em;
+    }
+    .course-description-text {
+        font-size: 0.688em;
+    }
+}

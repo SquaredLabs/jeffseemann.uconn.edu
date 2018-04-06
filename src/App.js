@@ -39,7 +39,7 @@ const App = () =>
           <Route path='/reading' component={Reading} />
           <Route path='/collaborate' component={Collaborate} />
           <Route path='/work' component={Work} />
-          <Route path='/content' component={Courses} />
+          <Route path='/courses' component={Courses} />
           <Route path='/about' component={About} />
           <Route component={NotFound} />
         </Switch>
