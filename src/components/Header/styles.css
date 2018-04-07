@@ -10,7 +10,7 @@
     font-size: 3.69em;
 }
 /* Mobile */
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 361px) and (max-width: 480px) {
     .header-container {
         display: flex;
         align-items: baseline;
@@ -19,5 +19,22 @@
     }
     .header-name {
         font-size: 2.313em;
+    }
+}
+/* Mobile 2 */
+@media screen and (max-width: 360px) {
+    .uconn-logo{
+        width: 3.181em;
+    }
+    .header-container {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-top: 2.313em;
+    }
+    .header-name {
+        padding-left: .25em;
+        text-align: right;
+        font-size: 1.813em;
     }
 }
