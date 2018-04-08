@@ -19,7 +19,7 @@ class ProfilePictureItem extends Component {
       <img className={profile ? 'profile-picture-image' : 'lab-about-img'} alt={uri} src={uri}></img>
       <div className="overlay">
         <div className={profile ? 'bio' : 'bio-alt'}>
-          <div className="name" style={nameStyle}>{header}</div>
+          <div className={profile ? 'name' : 'lab-name'} style={nameStyle}>{header}</div>
           <div className="dash" style={bioStyle}>-</div>
           <div className={profile ? 'major' : 'subheader'} style={bioStyle}>{subheader}</div>
           <div className="position" style={bioStyle}>{body}</div>

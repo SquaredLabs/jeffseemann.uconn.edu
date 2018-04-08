@@ -1,24 +1,30 @@
+/* index.js */
+/* Desktop */
 .profile-pictures-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
 }
 
+/* ProfilePictureItem.js */
+/* Desktop */
 .profile-container {
+    text-align: center;
     position: relative;
-    padding: 1.92em;
-}
-.profile-lab-container {
-    position: relative;
-    max-height: 15.69em;
-    padding: 23px 18px;
+    margin: 1.844em;
 }
 .profile-picture-image {
     border-radius: 100%;
     max-height: 15.69em;
 }
 .lab-about-img {
-    width: 14.875em;
+    width: 238px;
     height: 385px;
 }
 .overlay {
@@ -35,26 +41,34 @@
 .profile-container:hover .overlay {
     opacity: 1;
 }
+.profile-container:hover > .profile-picture-image {
+    filter: brightness(60%);
+}
 .bio {
+    text-align: left;
     position: absolute;
     top: 43%;
-    left: 50%;
+    left: 45%;
     width: 70%;
     transform: translate(-50%, -50%);
 }
 .bio-alt {
+    text-align: left;
     position: absolute;
-    top: 14%;
+    top: 12%;
     left: 50%;
-    width: 70%;
+    width: 222px; /* 238 - 2 * 8 (either side) */
     transform: translate(-50%, -50%);
 }
 .name {
-    font-size: 2.2em;
+    font-size: 2.313em;
     font-weight: bold;
 }
+.lab-name {
+    font-size: 2.313em;
+}
 .dash {
-    font-size: 2.2em;
+    font-size: 2.313em;
 }
 .major {
     font-size: 1.33em;
@@ -64,4 +78,69 @@
 }
 .position {
     font-size: 1.33em;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .profile-container {
+        margin: 1.1565em;
+    }
+    .profile-picture-image {
+        max-height: 12.313em;
+    }
+    .lab-about-img {
+        width: 207px;
+        height: 385px;
+    }
+    .bio-alt {
+        width: 191px; /* 207 - 2 * 8 (either side) */
+    }
+    .name {
+        font-size: 1.438em;
+    }
+    .lab-name {
+        font-size: 2.313em;
+    }
+    .dash {
+        font-size: 1.438em;
+    }
+    .major {
+        font-size: .875em;
+    }
+    .position {
+        font-size: .875em;
+    }
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .profile-container {
+        margin: .438em;
+    }
+    .profile-picture-image {
+        max-height: 8.750em;
+    }
+    .lab-about-img {
+        width: 207px;
+        height: 385px;
+    }
+    .bio-alt {
+        width: 191px; /* 207 - 2 * 8 (either side) */
+    }
+    .name {
+        font-size: 1.125em;
+    }
+    .lab-name {
+        font-size: 2.313em;
+    }
+    .dash {
+        font-size: .875em;
+    }
+    .major {
+        font-size: .875em;
+    }
+    .position {
+        font-size: .875em;
+    }
 }

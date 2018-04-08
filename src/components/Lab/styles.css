@@ -1,3 +1,5 @@
+/* index.js */
+/* Desktop */
 .lab-container {
     min-height: 100%;
 }
@@ -23,8 +25,14 @@
     padding-top: 19.5em;
     min-height: 100vh;
 }
-.half {
+.left-half {
     flex-basis: 50%;
+}
+.right-half {
+    flex-basis: 50%;
+}
+.half:first-child {
+    padding-right: 1.375em;
 }
 .third {
     flex-basis: 33.33%;
@@ -42,18 +50,102 @@
 .landing-description {
     font-size: 1.438em;
 }
+.landing-description a {
+    color: #49ea7f;
+    font-weight: inherit;
+}
+.landing-description a:hover {
+    text-decoration: underline;
+}
+.landing-description p {
+    margin-top: 0;
+}
 .bottom-description {
     font-weight: bold;
     font-size: 2.313em;
+}
+.bottom-description a {
+    color: #49ea7f;
+    font-weight: inherit;
+}
+.bottom-description a:hover {
+    text-decoration: underline;
+}
+.bottom-description p {
+    margin: 0;
 }
 .lab-description {
     padding: 8.75em 1.92em 1.25em 1.92em;
     font-size: 1.125em;
     height: 19em;
 }
+.lab-description a {
+    color: #49ea7f;
+    font-weight: inherit;
+}
+.lab-description a:hover {
+    text-decoration: underline;
+}
+.lab-description p {
+    margin-top: 0;
+}
+.lab-description p:last-child {
+    margin-bottom: 0;
+}
 .center-image-spacing {
     padding-top: 29.2em;
 }
 .right-image-spacing {
     padding-top: 35.2em;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .first-container {
+        padding: 0 1.250em;
+    }
+    .third-container {
+        padding: 0 1.250em;
+    }
+    .fourth-container {
+        padding: 0 1.250em;
+    }
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .left-half {
+        flex-basis: 73.63%;
+    }
+    .right-half {
+        display: none;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .first-container {
+        padding: 0 1.250em;
+    }
+    .landing-description {
+        font-size: .875em;
+    }
+    .second-container {
+        padding: 0 .813em;
+    }
+    .third-container {
+        padding: 0 1.250em;
+    }
+    .fourth-container {
+        padding: 0 .875em;
+    }
+    .left-half {
+        flex-basis: 73.63%;
+    }
+    .right-half {
+        display: none;
+    }
+    .half-1st-text {
+        padding-top: 5.188em;
+    }
+    .bottom-description {
+        font-size: 1.438em;
+    }
 }
