@@ -14,35 +14,6 @@
     display: flex;
     flex-wrap: wrap;
 }
-.courses-bottom-center {
-    grid-column-start: 2;
-    grid-column: 1 / span 3;
-}
-.courses-years-cover {
-    text-align: center;
-    font-size: 1.438em;
-}
-.courses-years-cover:hover {
-    cursor: pointer;
-}
-.courses-year {
-    padding: 0 1.031em;
-}
-.courses-year:hover {
-    cursor: pointer;
-}
-.courses-years-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 1.438em;
-    padding-top: 2.313em;
-    padding-bottom: 3.688em;
-}
-.courses-years-nav-empty {
-    font-size: 1.438em;
-    padding-top: 2.313em;
-}
 .courses-nextprev-container {
     padding-top: 23.75em;
     padding-right: .875em;
@@ -84,7 +55,6 @@
 @media screen and (min-width: 481px) and (max-width: 1025px) {
     .courses-container {
         padding: 0 1.250em;
-        grid-template-columns: 4em auto 4em;
     }
     .courses-container-extra {
         padding-left: initial;
@@ -115,13 +85,6 @@
     }
     .courses-totop {
         font-size: .875em;
-    }
-    .courses-years-nav {
-        padding-bottom: 2.688em;
-    }
-    .courses-year {
-        padding: 0 1.031em;
-        padding-bottom: 1em;
     }
     .courses-next-arrow {
         margin-bottom: initial;

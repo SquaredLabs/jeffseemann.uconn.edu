@@ -1,0 +1,42 @@
+/* index.js */
+/* Desktop, Tablet */
+.navigation-year {
+    padding: 0 1.031em;
+}
+.navigation-year:hover {
+    cursor: pointer;
+}
+.navigation-bottom-center {
+    padding-left: 5.25em; /* center navigation bar with page padding */
+    grid-column-start: 2;
+    grid-column: 1 / span 3;
+}
+.navigation-years-cover {
+    text-align: center;
+    font-size: 1.438em;
+}
+.navigation-years-cover:hover {
+    cursor: pointer;
+}
+.navigation-years-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.438em;
+    padding-top: 2.313em;
+    padding-bottom: 3.688em;
+}
+.navigation-years-nav-empty {
+    font-size: 1.438em;
+    padding-top: 2.313em;
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .navigation-year {
+        padding: 0 1.031em;
+        padding-bottom: 1em;
+    }
+    .navigation-years-nav {
+        padding-bottom: 2.688em;
+    }
+}

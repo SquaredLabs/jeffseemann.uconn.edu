@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
-import scrollToComponent from 'react-scroll-to-component'
 import { apiFetch } from '../../utils'
 import { apiUri, colors } from '../../config'
 import _ from 'lodash'
 
 import Header from '../Header'
 import CourseTile from './CourseTile'
+import YearsNaviation from '../YearsNavigation'
 
 import './styles.css'
 
 const black = { color: colors.siteBlack }
+
+const defaultYearsToDisplay = 8
 
 class Courses extends Component {
   constructor (props) {
@@ -20,9 +22,12 @@ class Courses extends Component {
       courses: [],
       years: [],
       yearsNav: [],
-      untilYearToDisplay: (new Date()).getFullYear() - 8
+      // TODO: change this so that if publications haven't been made in the past 3 years data
+      // still populates on landing
+      untilYearToDisplay: (new Date()).getFullYear() - defaultYearsToDisplay
     }
     this.showMoreCourses = this.showMoreCourses.bind(this)
+    this.showUntilCourse = this.showUntilCourse.bind(this)
   }
 
   componentDidMount () {
@@ -32,8 +37,8 @@ class Courses extends Component {
   scrollToTop () { scroll.scrollToTop() }
 
   showMoreCourses () {
-    this.setState({ untilYearToDisplay: this.state.untilYearToDisplay - 8 })
-    this.setState({ yearsNav: this.state.yearsNav.slice(8) })
+    this.setState({ untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay })
+    this.setState({ yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay) })
   }
 
   showUntilCourse (year) {
@@ -48,7 +53,7 @@ class Courses extends Component {
     this.setState({
       years: _.uniq(response.data.map(course => course.year)).sort((a, b) => b - a)
     })
-    this.setState({ yearsNav: this.state.years.slice(8) })
+    this.setState({ yearsNav: this.state.years.slice(defaultYearsToDisplay) })
   }
 
   render () {
@@ -59,18 +64,6 @@ class Courses extends Component {
         const relevantCourses = this.state.courses.filter(course => course.year === year)
         return <CourseTile year={year} ref={year} courses={relevantCourses} key={i} />
       })
-    // Display years in navigation not already on screen
-    const yearsNav = this.state.yearsNav.map((year, i) => {
-      // TODO: auto scroll (snap) to selected year
-      return <div className="courses-year" key={i} onClick={() => this.showUntilCourse(year)}>{year}</div>
-    })
-    const YearsNavigation = yearsNav.length > 0
-      ? <div className="courses-bottom-center courses-years-nav" style={black}>{yearsNav}</div>
-      : <div className="courses-years-nav-empty"></div>
-    // Display show more button if there are more courses to show
-    const showMoreButton = this.state.untilYearToDisplay >= _.min(this.state.years)
-      ? <div className="courses-bottom-center courses-years-cover" style={black} onClick={this.showMoreCourses}>...</div>
-      : <div></div>
 
     return <div className="courses-container">
       <div className="courses-container-extra">
@@ -78,12 +71,12 @@ class Courses extends Component {
       </div>
       {/* TODO: fix sticky scrolling */}
       <div className="courses-nextprev-container">
-        <div className="courses-next" onClick={() => scrollToComponent(this.refs)}>
+        <div className="courses-next">
           <div className="courses-next-arrow">&uarr;</div>
-          <div className="courses-rotate" style={black} onClick={this.scrollToTop}>Next</div>
+          <div className="courses-rotate" style={black}>Next</div>
         </div>
-        <div className="courses-prev" onClick={() => scrollToComponent(this.refs)}>
-          <div className="courses-rotate" style={black} onClick={this.scrollToTop}>Previous</div>
+        <div className="courses-prev">
+          <div className="courses-rotate" style={black}>Previous</div>
           <div>&darr;</div>
         </div>
       </div>
@@ -94,8 +87,10 @@ class Courses extends Component {
           <div style={black} onClick={this.scrollToTop}>To top</div>
         </div>
       </div>
-      {showMoreButton}
-      {YearsNavigation}
+      <YearsNaviation
+        yearClickAction={this.showMoreCourses}
+        yearsNav={this.state.yearsNav}
+        showUntil={this.showUntilCourse} />
     </div>
   }
 }
