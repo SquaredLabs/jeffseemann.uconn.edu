@@ -106,5 +106,8 @@ export const apiUri = {
   },
   courses: {
     pathname: '/api/1.1/tables/courses/rows'
+  },
+  publications: {
+    pathname: '/api/1.1/tables/publications/rows'
   }
 }
