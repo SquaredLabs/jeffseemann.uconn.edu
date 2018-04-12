@@ -6,7 +6,7 @@ import _ from 'lodash'
 
 import Header from '../Header'
 import CourseTile from './CourseTile'
-import YearsNaviation from '../YearsNavigation'
+import YearsBreadCrumbs from '../YearsBreadCrumbs'
 
 import './styles.css'
 
@@ -87,7 +87,7 @@ class Courses extends Component {
           <div style={black} onClick={this.scrollToTop}>To top</div>
         </div>
       </div>
-      <YearsNaviation
+      <YearsBreadCrumbs
         yearClickAction={this.showMoreCourses}
         yearsNav={this.state.yearsNav}
         showUntil={this.showUntilCourse} />

@@ -39,4 +39,8 @@
     .navigation-years-nav {
         padding-bottom: 2.688em;
     }
+    .navigation-bottom-center {
+        padding-left: initial;
+        grid-column: 1 / span 2;
+    }
 }
