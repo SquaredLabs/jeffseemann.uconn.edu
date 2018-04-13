@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetchGeneric, apiImageUrl } from '../../utils'
+import { apiFetch, apiImageUrl } from '../../utils'
 import { colors, apiUri } from '../../config'
 
 import './styles.css'
@@ -20,8 +20,7 @@ class PastReading extends Component {
   }
 
   async pastReading () {
-    const response = await apiFetchGeneric(apiUri.pastReading.protocol,
-      apiUri.pastReading.hostname, apiUri.pastReading.pathname, apiUri.pastReading.query)
+    const response = await apiFetch(apiUri.pastReading.pathname, apiUri.pastReading.query)
     this.setState({ books: response.data })
   }
 

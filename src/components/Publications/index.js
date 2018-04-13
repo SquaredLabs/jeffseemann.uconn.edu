@@ -6,6 +6,7 @@ import _ from 'lodash'
 
 import Header from '../Header'
 import PublicationTile from './PublicationTile'
+import WordWheel from './WordWheel'
 import YearsBreadCrumbs from '../YearsBreadCrumbs'
 
 import './styles.css'
@@ -37,22 +38,28 @@ class Publications extends Component {
   scrollToTop () { scroll.scrollToTop() }
 
   showMorePublications () {
-    this.setState({ untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay })
-    this.setState({ yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay) })
+    this.setState({
+      untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay,
+      yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay)
+    })
   }
 
   showUntilPublication (year) {
-    this.setState({ untilYearToDisplay: year - 1 })
-    this.setState({ yearsNav: this.state.yearsNav.filter(y => y < year) })
+    this.setState({
+      untilYearToDisplay: year - 1,
+      yearsNav: this.state.yearsNav.filter(y => y < year)
+    })
   }
 
   async getPublications () {
     const response = await apiFetch(apiUri.publications.pathname)
-    this.setState({ publications: response.data })
+    const years = _.uniq(response.data.map(publication => publication.year)).sort((a, b) => b - a)
+    const yearsNav = years.slice(defaultYearsToDisplay)
     this.setState({
-      years: _.uniq(response.data.map(publication => publication.year)).sort((a, b) => b - a)
+      publications: response.data,
+      years: years,
+      yearsNav: yearsNav
     })
-    this.setState({ yearsNav: this.state.years.slice(defaultYearsToDisplay) })
   }
 
   render () {
@@ -81,6 +88,9 @@ class Publications extends Component {
       </div>
       <div className="publications-inner-container">
         <div>{PublicationTiles}</div>
+        <div className="publications-word-wheel">
+          <WordWheel data={this.state.publications} years={this.state.years}/>
+        </div>
         <YearsBreadCrumbs
           yearClickAction={this.showMorePublications}
           yearsNav={this.state.yearsNav}

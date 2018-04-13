@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetchGeneric } from '../../utils'
+import { apiFetch } from '../../utils'
 import { apiUri } from '../../config'
 
 import Position from './Position'
@@ -20,8 +20,7 @@ class AvailablePositions extends Component {
   }
 
   async getPositions () {
-    const response = await apiFetchGeneric(apiUri.positions.protocol,
-      apiUri.positions.hostname, apiUri.positions.pathname, apiUri.positions.query)
+    const response = await apiFetch(apiUri.positions.pathname, apiUri.positions.query)
     this.setState({ positions: response.data })
   }
 

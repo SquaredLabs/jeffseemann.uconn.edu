@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetchGeneric, apiImageUrl } from '../../utils'
+import { apiFetch, apiImageUrl } from '../../utils'
 import { colors, apiUri } from '../../config'
 
 import './styles.css'
@@ -21,8 +21,7 @@ class NowReading extends Component {
   }
 
   async nowReading () {
-    const response = await apiFetchGeneric(apiUri.nowReading.protocol,
-      apiUri.nowReading.hostname, apiUri.nowReading.pathname, apiUri.nowReading.query)
+    const response = await apiFetch(apiUri.nowReading.pathname, apiUri.nowReading.query)
     this.setState({ books: response.data })
   }
 

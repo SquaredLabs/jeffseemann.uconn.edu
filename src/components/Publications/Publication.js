@@ -11,12 +11,17 @@ class Publication extends Component {
   constructor (props) {
     super(props)
 
-    this.state = { show: false }
+    this.state = {
+      show: false,
+      collapseImg: 'assets/img/Expand_Text.png'
+    }
 
     this.toggleShow = this.toggleShow.bind(this)
   }
 
   toggleShow () { this.setState({ show: !this.state.show }) }
+
+  changeImgOnHover (url) { this.setState({ collapseImg: url }) }
 
   render () {
     const { publication: { title, discipline, info, authors, abstract, url } } = this.props
@@ -37,10 +42,12 @@ class Publication extends Component {
         <div className="publication-info" style={gray}>{info}</div>
         <div className="publication-authors" style={gray}>{authors}</div>
       </div>
-      <div className="publication-abstract-wrapper" style={this.state.show ? green : {}}>
+      <div className="publication-abstract-wrapper" style={this.state.show ? green : {}}
+        onMouseOver={() => { this.changeImgOnHover('assets/img/Expand_Text_Hover.png') }}
+        onMouseOut={() => { this.changeImgOnHover('assets/img/Expand_Text.png') }}>
         <div className="publication-abstract-header" onClick={this.toggleShow}>
           <img className="publication-img-expand" alt="icon"
-            src={this.state.show ? 'assets/img/Collapse_Text.png' : 'assets/img/Expand_Text.png'}></img>
+            src={this.state.show ? 'assets/img/Collapse_Text.png' : this.state.collapseImg}/>
           <div className="publication-abstract" style={this.state.show ? black : {}}>Abstract</div>
         </div>
         {showAbstract}

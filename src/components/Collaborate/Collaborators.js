@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetchGeneric, apiImageUrl } from '../../utils'
+import { apiFetch, apiImageUrl } from '../../utils'
 import { apiUri } from '../../config'
 
 import Partner from './Partner'
@@ -22,14 +22,12 @@ class Collaborators extends Component {
   }
 
   async getCollaborators () {
-    const response = await apiFetchGeneric(apiUri.collaborators.protocol,
-      apiUri.collaborators.hostname, apiUri.collaborators.pathname, apiUri.collaborators.query)
+    const response = await apiFetch(apiUri.collaborators.pathname, apiUri.collaborators.query)
     this.setState({ collaborators: response.data })
   }
 
   async getSponsors () {
-    const response = await apiFetchGeneric(apiUri.sponsors.protocol,
-      apiUri.sponsors.hostname, apiUri.sponsors.pathname, apiUri.sponsors.query)
+    const response = await apiFetch(apiUri.sponsors.pathname, apiUri.sponsors.query)
     this.setState({ sponsors: response.data })
   }
 

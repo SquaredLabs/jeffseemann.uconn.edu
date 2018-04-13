@@ -36,6 +36,9 @@
     display: grid;
     grid-template-columns: auto 6.750em 19.813em;
 }
+.publications-word-wheel {
+    grid-column-start: 3;
+}
 .publications-container-extra {
     grid-column: 1 / span 3;
     padding-left: 5.25em;
@@ -61,6 +64,9 @@
         grid-column-start: 2;
         display: initial;
     }
+    .publications-word-wheel {
+        display: none;
+    }
     .publications-container-extra {
         padding-left: initial;
     }
@@ -74,6 +80,9 @@
     .publications-inner-container {
         grid-column-start: 2;
         display: initial;
+    }
+    .publications-word-wheel {
+        display: none;
     }
     .publications-nextprev-container {
         padding-top: 22em;
@@ -240,4 +249,38 @@
     .publication-abstract-readmore {
         padding-top: .636em;
     }
+}
+
+/* WordWheel.js */
+/* Desktop */
+.WordWheel-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.WordWheel-key-container {
+    grid-column-start: 1;
+    text-align: right;
+    padding-right: 0.625em;
+}
+.WordWheel-key {
+    padding: .5em 0;
+    font-size: 2.313em;
+}
+.WordWheel-bar-container {
+    grid-column-start: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.WordWheel-bar {
+    height: 100%;
+    width: 0.313em;
+}
+.WordWheel-value-container {
+    grid-column-start: 3;
+    padding: 1.875em 0;
+    padding-left: 0.438em;
+}
+.WordWheel-value {
+    padding: 7px 0;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetchGeneric, apiImageUrl } from '../../utils'
+import { apiFetch, apiImageUrl } from '../../utils'
 import { apiUri, colors } from '../../config'
 
 import Navigation from '../Navigation'
@@ -48,8 +48,7 @@ class Lab extends Component {
     var i = 0
     var j = 2
     var rows = []
-    const response = await apiFetchGeneric(apiUri.labProfiles.protocol,
-      apiUri.labProfiles.hostname, apiUri.labProfiles.pathname, apiUri.labProfiles.query)
+    const response = await apiFetch(apiUri.labProfiles.pathname, apiUri.labProfiles.query)
 
     // TODO: if page resizes this value is not updated...
     if (window.innerWidth > 480) {
@@ -71,8 +70,7 @@ class Lab extends Component {
   }
 
   async labContent () {
-    const response = await apiFetchGeneric(apiUri.labContent.protocol,
-      apiUri.labContent.hostname, apiUri.labContent.pathname)
+    const response = await apiFetch(apiUri.labContent.pathname)
     if (response && response.data) this.setState({ content: response.data[0] })
   }
 

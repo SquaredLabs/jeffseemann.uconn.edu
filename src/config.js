@@ -61,43 +61,29 @@ export const colors = {
 
 export const apiUri = {
   labProfiles: {
-    protocol: 'http:',
-    hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/lab_members/rows',
     query: { 'filters[active][eq]': 1 }
   },
   labContent: {
-    protocol: 'http:',
-    hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/lab_content/rows'
   },
   nowReading: {
-    protocol: 'http:',
-    hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/reading/rows',
     query: { 'filters[now][eq]': 1 }
   },
   pastReading: {
-    protocol: 'http:',
-    hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/reading/rows',
     query: { 'filters[now][eq]': 0 }
   },
   collaborators: {
-    protocol: 'http:',
-    hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/collaborators/rows',
     query: { 'filters[sponsor][eq]': 0 }
   },
   sponsors: {
-    protocol: 'http:',
-    hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/collaborators/rows',
     query: { 'filters[sponsor][eq]': 1 }
   },
   positions: {
-    protocol: 'http:',
-    hostname: 'jeffwebsite.test',
     pathname: '/api/1.1/tables/work/rows',
     query: { 'filters[active][eq]': 1 }
   },
