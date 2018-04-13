@@ -37,23 +37,27 @@ class Courses extends Component {
   scrollToTop () { scroll.scrollToTop() }
 
   showMoreCourses () {
-    this.setState({ untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay })
-    this.setState({ yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay) })
+    this.setState({
+      untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay,
+      yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay)
+    })
   }
 
   showUntilCourse (year) {
-    this.setState({ untilYearToDisplay: year - 1 })
-    this.setState({ yearsNav: this.state.yearsNav.filter(y => y < year) })
-    // scrollToComponent(this.refs[year])
+    this.setState({
+      untilYearToDisplay: year - 1,
+      yearsNav: this.state.yearsNav.filter(y => y < year)
+    })
   }
 
   async getCourses () {
     const response = await apiFetch(apiUri.courses.pathname)
-    this.setState({ courses: response.data })
+    const years = _.uniq(response.data.map(course => course.year)).sort((a, b) => b - a)
     this.setState({
-      years: _.uniq(response.data.map(course => course.year)).sort((a, b) => b - a)
+      courses: response.data,
+      years: years,
+      yearsNav: years.slice(defaultYearsToDisplay)
     })
-    this.setState({ yearsNav: this.state.years.slice(defaultYearsToDisplay) })
   }
 
   render () {
