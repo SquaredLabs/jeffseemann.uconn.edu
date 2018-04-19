@@ -17,7 +17,7 @@ class ProfilePictureItem extends Component {
 
     return <div className="profile-container">
       <img className={profile ? 'profile-picture-image' : 'lab-about-img'} alt={uri} src={uri}></img>
-      <div className="overlay">
+      <div className={profile ? 'pp-overlay' : 'overlay'}>
         <div className={profile ? 'bio' : 'bio-alt'}>
           <div className={profile ? 'name' : 'lab-name'} style={nameStyle}>{header}</div>
           <div className="dash" style={bioStyle}>-</div>
