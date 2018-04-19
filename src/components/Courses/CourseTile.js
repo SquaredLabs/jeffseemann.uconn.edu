@@ -13,10 +13,15 @@ class CourseTile extends Component {
     const courses = (allCourses
       .filter(course => course.semester.toLowerCase() === semester.toLowerCase()))
       .map((course, i) => <Course course={course} key={i}/>)
+    const msg = <div className="coursetitle-semester-alt" style={black}>
+      <div>All of my energy went</div>
+      <div>toward research this</div>
+      <div>semester!</div>
+    </div>
 
     return <div className="coursetile-semester-container">
       <div className="coursetile-semester" style={gray}>{semester}</div>
-      {courses}
+      {courses.length > 0 ? courses : msg}
     </div>
   }
 
