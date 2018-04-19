@@ -23,9 +23,7 @@ class Publications extends Component {
       publications: [],
       years: [],
       yearsNav: [],
-      // TODO: change this so that if publications haven't been made in the past 3 years data
-      // still populates on landing
-      untilYearToDisplay: (new Date()).getFullYear() - defaultYearsToDisplay
+      untilYearToDisplay: 0
     }
     this.showMorePublications = this.showMorePublications.bind(this)
     this.showUntilPublication = this.showUntilPublication.bind(this)
@@ -58,7 +56,8 @@ class Publications extends Component {
     this.setState({
       publications: response.data,
       years: years,
-      yearsNav: yearsNav
+      yearsNav: yearsNav,
+      untilYearToDisplay: _.max(years) - defaultYearsToDisplay
     })
   }
 

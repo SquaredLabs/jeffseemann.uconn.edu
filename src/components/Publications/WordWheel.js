@@ -48,11 +48,11 @@ class WordWheel extends Component {
       if (index === 1) { sz = 2.313 }
       if (index === years.length - 2) { sz = 2.938 }
       if (index === years.length - 1) { sz = 3.668 }
-      const valueStyle = _.assign({}, index === years.length - 1 ? green : black, { 'font-size': `${sz}em` })
+      const valueStyle = _.assign({}, index === years.length - 1 ? green : black, { 'fontSize': `${sz}em` })
       const keyStyle = index === years.length - 1 ? green : black
       index += 1
-      keys.push(<div className="WordWheel-key" style={keyStyle}>{key}</div>)
-      values.push(<div className="WordWheel-value" style={valueStyle}>{value}</div>)
+      keys.push(<div className="WordWheel-key" style={keyStyle} key={key}>{key}</div>)
+      values.push(<div className="WordWheel-value" style={valueStyle} key={key}>{value}</div>)
     })
 
     return <div className="WordWheel-container">
