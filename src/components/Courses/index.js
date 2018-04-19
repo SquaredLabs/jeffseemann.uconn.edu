@@ -22,9 +22,10 @@ class Courses extends Component {
       courses: [],
       years: [],
       yearsNav: [],
-      // TODO: change this so that if publications haven't been made in the past 3 years data
-      // still populates on landing
-      untilYearToDisplay: (new Date()).getFullYear() - defaultYearsToDisplay
+      // Keep track of these two states so that nonconsecutive years load perfectly
+      // while breadcrumbs navigation bar allows quick filtering by year
+      untilYearToDisplay: 0,
+      atLeastNumToDisplay: defaultYearsToDisplay
     }
     this.showMoreCourses = this.showMoreCourses.bind(this)
     this.showUntilCourse = this.showUntilCourse.bind(this)
@@ -38,15 +39,18 @@ class Courses extends Component {
 
   showMoreCourses () {
     this.setState({
+      atLeastNumToDisplay: this.state.atLeastNumToDisplay + defaultYearsToDisplay,
       untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay,
       yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay)
     })
   }
 
   showUntilCourse (year) {
+    const newYearsNav = this.state.yearsNav.filter(y => y < year)
     this.setState({
-      untilYearToDisplay: year - 1,
-      yearsNav: this.state.yearsNav.filter(y => y < year)
+      untilYearToDisplay: year - 1, // offset to filter
+      yearsNav: newYearsNav,
+      atLeastNumToDisplay: this.state.years.length - newYearsNav.length
     })
   }
 
@@ -56,14 +60,14 @@ class Courses extends Component {
     this.setState({
       courses: response.data,
       years: years,
-      yearsNav: years.slice(defaultYearsToDisplay)
+      yearsNav: years.slice(defaultYearsToDisplay),
+      untilYearToDisplay: _.max(years) - defaultYearsToDisplay
     })
   }
 
   render () {
     // Display subset of courses grouped by year
-    const CourseTiles = this.state.years
-      .filter(year => year > this.state.untilYearToDisplay)
+    const CourseTiles = this.state.years.slice(0, this.state.atLeastNumToDisplay)
       .map((year, i) => {
         const relevantCourses = this.state.courses.filter(course => course.year === year)
         return <CourseTile year={year} ref={year} courses={relevantCourses} key={i} />

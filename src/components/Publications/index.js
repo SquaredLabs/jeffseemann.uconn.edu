@@ -23,7 +23,10 @@ class Publications extends Component {
       publications: [],
       years: [],
       yearsNav: [],
-      untilYearToDisplay: 0
+      // Keep track of these two states so that nonconsecutive years load perfectly
+      // while breadcrumbs navigation bar allows quick filtering by year
+      untilYearToDisplay: 0,
+      atLeastNumToDisplay: defaultYearsToDisplay
     }
     this.showMorePublications = this.showMorePublications.bind(this)
     this.showUntilPublication = this.showUntilPublication.bind(this)
@@ -37,15 +40,18 @@ class Publications extends Component {
 
   showMorePublications () {
     this.setState({
+      atLeastNumToDisplay: this.state.atLeastNumToDisplay + defaultYearsToDisplay,
       untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay,
       yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay)
     })
   }
 
   showUntilPublication (year) {
+    const newYearsNav = this.state.yearsNav.filter(y => y < year)
     this.setState({
-      untilYearToDisplay: year - 1,
-      yearsNav: this.state.yearsNav.filter(y => y < year)
+      untilYearToDisplay: year - 1, // offset to filter
+      yearsNav: newYearsNav,
+      atLeastNumToDisplay: this.state.years.length - newYearsNav.length
     })
   }
 
@@ -63,8 +69,7 @@ class Publications extends Component {
 
   render () {
     // Display subset of publications grouped by year
-    const PublicationTiles = this.state.years
-      .filter(year => year > this.state.untilYearToDisplay)
+    const PublicationTiles = this.state.years.slice(0, this.state.atLeastNumToDisplay)
       .map((year, i) => {
         const relevantPublications = this.state.publications.filter(course => course.year === year)
         return <PublicationTile year={year} ref={year} publications={relevantPublications} key={i} />
