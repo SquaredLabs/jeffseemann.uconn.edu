@@ -50,22 +50,18 @@ class Lab extends Component {
     var rows = []
     const response = await apiFetch(apiUri.labProfiles.pathname, apiUri.labProfiles.query)
 
-    // TODO: if page resizes this value is not updated...
-    if (window.innerWidth > 480) {
-      // alternate number of profiles per line 2 => 3 => 2 => ...
-      while (i < response.data.length) {
-        rows.push(<ProfilePicture profiles={response.data.slice(i, j)} />)
-        if ((i + j) % 2 === 0) {
-          i = j
-          j += 3
-        } else {
-          i = j
-          j += 2
-        }
+    // alternate number of profiles per line 2 => 3 => 2 => ...
+    while (i < response.data.length) {
+      rows.push(<ProfilePicture profiles={response.data.slice(i, j)} />)
+      if ((i + j) % 2 === 0) {
+        i = j
+        j += 3
+      } else {
+        i = j
+        j += 2
       }
-    } else {
-      rows.push(<ProfilePicture profiles={response.data} />)
     }
+
     this.setState({ members: rows })
   }
 
@@ -100,16 +96,18 @@ class Lab extends Component {
       </div>
 
       <div style={backgroundBlack} className="third-container">
-        <div className="third">
+        <div className="lab-first-container">
           <div style={white} className="lab-description" dangerouslySetInnerHTML={labDescription}></div>
-          <ProfilePictureItem title={this.state.content.first_image_title} desc={this.state.content.first_image_description} url={uriImageLeft} />
+          <div className="left-image-spacing">
+            <ProfilePictureItem title={this.state.content.first_image_title} desc={this.state.content.first_image_description} url={uriImageLeft} />
+          </div>
         </div>
-        <div className="third">
+        <div className="lab-second-container">
           <div className="center-image-spacing">
             <ProfilePictureItem title={this.state.content.second_image_title} desc={this.state.content.second_image_description} url={uriImageCenter} />
           </div>
         </div>
-        <div className="third">
+        <div className="lab-third-container">
           <div className="right-image-spacing">
             <ProfilePictureItem title={this.state.content.third_image_title} desc={this.state.content.third_image_description} url={uriImageRight} />
           </div>

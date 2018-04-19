@@ -22,7 +22,7 @@
     display: flex;
     align-items: center;
     padding: 0 5.875em;
-    padding-top: 19.5em;
+    padding-top: 18.69em;
     min-height: 100vh;
 }
 .left-half {
@@ -34,7 +34,13 @@
 .half:first-child {
     padding-right: 1.375em;
 }
-.third {
+.lab-first-container {
+    flex-basis: 33.33%;
+}
+.lab-second-container {
+    flex-basis: 33.33%;
+}
+.lab-third-container {
     flex-basis: 33.33%;
 }
 .half-1st-text {
@@ -75,9 +81,8 @@
     margin: 0;
 }
 .lab-description {
-    padding: 8.75em 1.92em 1.25em 1.92em;
+    padding: 9.875em 1.92em 0 1.92em;
     font-size: 1.125em;
-    height: 19em;
 }
 .lab-description a {
     color: #49ea7f;
@@ -92,11 +97,14 @@
 .lab-description p:last-child {
     margin-bottom: 0;
 }
+.left-image-spacing {
+    padding-top: 1.906em;
+}
 .center-image-spacing {
-    padding-top: 29.2em;
+    padding-top: 27.344em;
 }
 .right-image-spacing {
-    padding-top: 35.2em;
+    padding-top: 31.031em;
 }
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 1025px) {
@@ -107,16 +115,49 @@
         padding: 0 1.250em;
     }
     .fourth-container {
-        padding: 0 1.250em;
+        padding: 16.69em 1.250em 0 1.250em;
+    }
+    .lab-description {
+        padding: 9.875em 0 0 0;
+    }
+    .left-image-spacing {
+        padding-top: 3.4685em;
+    }
+    .center-image-spacing {
+        padding-top: 26.0315em;
+    }
+    .right-image-spacing {
+        padding-top: 29.7185em;
     }
 }
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 767px) {
+    .fourth-container {
+        padding-top: 0;
+    }
     .left-half {
         flex-basis: 73.63%;
     }
     .right-half {
         display: none;
+    }
+    .lab-first-container {
+        flex-basis: 50%;
+    }
+    .lab-second-container {
+        display: none;
+    }
+    .lab-third-container {
+        flex-basis: 50%;
+    }
+    .lab-description {
+        padding: 6em 1.25em 0 0;
+    }
+    .left-image-spacing {
+        display: none;
+    }
+    .right-image-spacing {
+        padding-top: 16em;
     }
 }
 /* Mobile */
@@ -132,6 +173,7 @@
     }
     .third-container {
         padding: 0 1.250em;
+        height: 100vh;
     }
     .fourth-container {
         padding: 0 .875em;
@@ -146,6 +188,22 @@
         padding-top: 5.188em;
     }
     .bottom-description {
+        padding-top: 13.375em;
         font-size: 1.438em;
+    }
+    .lab-first-container {
+        flex-basis: 100%;
+    }
+    .lab-second-container {
+        display: none;
+    }
+    .lab-third-container {
+        display: none;
+    }
+    .lab-description {
+        padding: 9.688em 0 0 0;
+    }
+    .left-image-spacing {
+        padding-top: 2.313em;
     }
 }
