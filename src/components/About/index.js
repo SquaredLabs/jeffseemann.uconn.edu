@@ -28,9 +28,11 @@ class About extends Component {
   async getAboutContent () {
     const response = await apiFetch(apiUri.about.pathname)
     if (response && response.data.length > 0) {
-      this.setState({ image: response.data[0].image.data.url })
-      this.setState({ description: response.data[0].description })
-      this.setState({ contact: response.data[0].contact_description })
+      this.setState({
+        image: response.data[0].image.data.url,
+        description: response.data[0].description,
+        contact: response.data[0].contact_description
+      })
     }
   }
 
