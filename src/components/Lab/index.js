@@ -9,6 +9,7 @@ import ProfilePictureItem from '../ProfilePicture/ProfilePictureItem'
 import './styles.css'
 
 const white = { color: colors.profileWhite }
+const green = { color: colors.siteGreen }
 const gray = { color: colors.siteGray }
 const black = { color: colors.siteBlack }
 const backgroundBlack = { background: colors.siteBlack }
@@ -78,10 +79,19 @@ class Lab extends Component {
     const labDescription = {__html: this.state.content.lab_description}
     const labBottomDescription = {__html: this.state.content.lab_bottom_description}
 
+    const collapseHeader =
+      <div className="lab-header-name" style={gray}>
+        Seemann
+        <span style={green}> Lab</span>
+      </div>
+
     return <div className="lab-container">
       <div className="first-container">
         <div className="left-half">
-          <img className="uconn-logo-lab" alt="uconn-logo" src="assets/img/uconn-wordmark-single-black.png"></img>
+          <div className="lab-header-container">
+            <img className="uconn-logo-lab" alt="uconn-logo" src="assets/img/uconn-wordmark-single-black.png"></img>
+            {collapseHeader}
+          </div>
           <div className="half-1st-text">
             <div style={black} className="landing-description" dangerouslySetInnerHTML={landingDescription}></div>
           </div>
@@ -92,30 +102,43 @@ class Lab extends Component {
       </div>
 
       <div className="second-container">
+        <div className="lab-header-name-visible" style={gray}>
+          Seemann
+          <span style={green}> Lab</span>
+        </div>
         {this.state.members}
       </div>
 
       <div style={backgroundBlack} className="third-container">
-        <div className="lab-first-container">
-          <div style={white} className="lab-description" dangerouslySetInnerHTML={labDescription}></div>
-          <div className="left-image-spacing">
-            <ProfilePictureItem title={this.state.content.first_image_title} desc={this.state.content.first_image_description} url={uriImageLeft} />
-          </div>
+        <div className="lab-header-name-visible-2" style={gray}>
+          Seemann
+          <span style={green}> Lab</span>
         </div>
-        <div className="lab-second-container">
-          <div className="center-image-spacing">
-            <ProfilePictureItem title={this.state.content.second_image_title} desc={this.state.content.second_image_description} url={uriImageCenter} />
+        <div className="third-container-wrapper">
+          <div className="lab-first-container">
+            <div style={white} className="lab-description" dangerouslySetInnerHTML={labDescription}></div>
+            <div className="left-image-spacing">
+              <ProfilePictureItem title={this.state.content.first_image_title} desc={this.state.content.first_image_description} url={uriImageLeft} />
+            </div>
           </div>
-        </div>
-        <div className="lab-third-container">
-          <div className="right-image-spacing">
-            <ProfilePictureItem title={this.state.content.third_image_title} desc={this.state.content.third_image_description} url={uriImageRight} />
+          <div className="lab-second-container">
+            <div className="center-image-spacing">
+              <ProfilePictureItem title={this.state.content.second_image_title} desc={this.state.content.second_image_description} url={uriImageCenter} />
+            </div>
+          </div>
+          <div className="lab-third-container">
+            <div className="right-image-spacing">
+              <ProfilePictureItem title={this.state.content.third_image_title} desc={this.state.content.third_image_description} url={uriImageRight} />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="fourth-container">
         <div style={gray} className="left-half">
+          <div className="lab-header-container-fourth">
+            {collapseHeader}
+          </div>
           <div className="bottom-description" dangerouslySetInnerHTML={labBottomDescription}></div>
         </div>
         <div className="right-half">

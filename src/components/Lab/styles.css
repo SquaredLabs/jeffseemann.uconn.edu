@@ -5,7 +5,8 @@
 }
 .first-container {
     padding: 0 5.938em;
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
     min-height: 100vh;
 }
 .second-container {
@@ -14,22 +15,57 @@
 .third-container {
     padding-left: 11.25em;
     padding-right: 5.875em;
-    display: flex;
-    justify-content: space-evenly;
     height: 115vh;
 }
-.fourth-container {
+.third-container-wrapper {
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
+}
+.fourth-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
     padding: 0 5.875em;
     padding-top: 18.69em;
     min-height: 100vh;
 }
 .left-half {
-    flex-basis: 50%;
+    grid-column: 1;
 }
 .right-half {
-    flex-basis: 50%;
+    grid-column: 2;
+}
+.lab-header-container {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    padding-top: 3.7em;
+}
+.lab-header-container-fourth {
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    padding-top: 3.7em;
+}
+.lab-header-name {
+    text-align: right;
+    font-size: 3.69em;
+    font-weight: bold;
+    display: none;
+}
+.lab-header-name-visible {
+    padding-top: 1em;
+    padding-bottom: 2.051em;
+    padding-left: 1.610em;
+    padding-right: 1.610em;
+    text-align: right;
+    font-size: 3.69em;
+    font-weight: bold;
+}
+.lab-header-name-visible-2 {
+    padding-top: 1em;
+    text-align: right;
+    font-size: 3.69em;
+    font-weight: bold;
 }
 .half:first-child {
     padding-right: 1.375em;
@@ -51,7 +87,7 @@
 }
 .uconn-logo-lab {
     width: 95px;
-    padding-top: 3.7em;
+    height: 20px;
 }
 .landing-description {
     font-size: 1.438em;
@@ -67,6 +103,7 @@
     margin-top: 0;
 }
 .bottom-description {
+    padding-top: 5.189em;
     font-weight: bold;
     font-size: 2.313em;
 }
@@ -81,7 +118,7 @@
     margin: 0;
 }
 .lab-description {
-    padding: 9.875em 1.92em 0 1.92em;
+    padding: 1.556em 1.92em 0 1.92em;
     font-size: 1.125em;
 }
 .lab-description a {
@@ -98,13 +135,13 @@
     margin-bottom: 0;
 }
 .left-image-spacing {
-    padding-top: 1.906em;
+    padding-top: 3.906em;
 }
 .center-image-spacing {
-    padding-top: 27.344em;
+    padding-top: 18.063em;
 }
 .right-image-spacing {
-    padding-top: 31.031em;
+    padding-top: 27.063em;
 }
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 1025px) {
@@ -117,29 +154,45 @@
     .fourth-container {
         padding: 16.69em 1.250em 0 1.250em;
     }
+    .uconn-logo-lab {
+        width: 59px;
+        height: 12px;
+    }
+    .lab-header-name-visible {
+        padding-left: 0.339em;
+        padding-right: 0.339em;
+    }
+    .lab-header-name-visible-2 {
+        padding-left: 0.339em;
+        padding-right: 0.339em;
+    }
     .lab-description {
-        padding: 9.875em 0 0 0;
+        padding: 1.556em 0 0 0;
     }
     .left-image-spacing {
         padding-top: 3.4685em;
     }
     .center-image-spacing {
-        padding-top: 26.0315em;
+        padding-top: 19.063em;
     }
     .right-image-spacing {
-        padding-top: 29.7185em;
+        padding-top: 25.063em;
     }
 }
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 767px) {
+    .first-container {
+        grid-template-columns: auto;
+    }
     .fourth-container {
         padding-top: 0;
-    }
-    .left-half {
-        flex-basis: 73.63%;
+        grid-template-columns: auto;
     }
     .right-half {
         display: none;
+    }
+    .lab-header-name {
+        display: initial;
     }
     .lab-first-container {
         flex-basis: 50%;
@@ -151,19 +204,27 @@
         flex-basis: 50%;
     }
     .lab-description {
-        padding: 6em 1.25em 0 0;
+        padding: 3.556em 1.25em 0 0;
     }
     .left-image-spacing {
         display: none;
     }
     .right-image-spacing {
-        padding-top: 16em;
+        padding-top: 10em;
+    }
+    .half-1st-text {
+        width: 73.6%;
+    }
+    .bottom-description {
+        padding-top: 3.270em;
+        width: 73.6%;
     }
 }
 /* Mobile */
 @media screen and (max-width: 480px) {
     .first-container {
         padding: 0 1.250em;
+        grid-template-columns: auto;
     }
     .landing-description {
         font-size: .875em;
@@ -177,17 +238,38 @@
     }
     .fourth-container {
         padding: 0 .875em;
+        grid-template-columns: auto;
     }
-    .left-half {
-        flex-basis: 73.63%;
+    .lab-header-name-visible {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 2.313em;
+    }
+    .lab-header-name-visible-2 {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 2.313em;
     }
     .right-half {
         display: none;
     }
+    .lab-header-container-fourth {
+        padding-top: 16em;
+    }
+    .lab-header-name {
+        font-size: 2.313em;
+        display: initial;
+    }
+    .uconn-logo-lab {
+        width: 59px;
+        height: 12px;
+    }
     .half-1st-text {
+        width: 73.6%;
         padding-top: 5.188em;
     }
     .bottom-description {
+        width: 73.6%;
         padding-top: 13.375em;
         font-size: 1.438em;
     }
@@ -201,9 +283,13 @@
         display: none;
     }
     .lab-description {
-        padding: 9.688em 0 0 0;
+        padding: 4.625em 0 0 0;
     }
     .left-image-spacing {
         padding-top: 2.313em;
+    }
+    .bottom-description {
+        padding-top: 3.217em;
+        padding-bottom: 9.478em;
     }
 }

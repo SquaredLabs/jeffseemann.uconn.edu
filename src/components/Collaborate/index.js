@@ -13,7 +13,7 @@ const green = { color: colors.siteGreen }
 class Collaborate extends Component {
     render = () =>
       <div className="collab-container">
-        <Header />
+        <Header page="Collaborate"/>
         <div className="collab-welcome-banner">
           <div>
             <div className="collab-name" style={black}>Seemann</div>

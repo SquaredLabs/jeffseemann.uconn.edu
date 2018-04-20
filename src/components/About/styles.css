@@ -1,14 +1,15 @@
 /* index.js */
 /* Desktop */
 .about-container {
-    display: flex;
+    display: grid;
     padding: 0 5.938em;
+    grid-template-columns: 48.86% 51.14%;
 }
 .about-left {
-    flex-basis: 48.86%;
+    grid-column: 1;
 }
 .about-right {
-    flex-basis: 51.14%;
+    grid-column: 2;
 }
 .about-img {
     /* 2.750em - 1.438em (default top margin relative to 1.438em font-size on <p> */
@@ -46,6 +47,7 @@
 @media screen and (min-width: 481px) and (max-width: 1025px) {
     .about-container {
         padding: 0 1.250em;
+        grid-template-columns: auto;
     }
     .about-img {
         padding-bottom: 0.875em;
@@ -54,9 +56,6 @@
 
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 767px) {
-    .about-left {
-        flex-basis: 73.6%;
-    }
     .about-right {
         display: none;
     }
@@ -65,15 +64,11 @@
 /* Mobile */
 @media screen and (max-width: 480px) {
     .about-container {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: auto;
         padding: 0 .875em;
     }
     .about-wrapper {
         padding-right: 4.813em;
-    }
-    .about-left {
-        flex-basis: initial;
     }
     .about-right {
         display: none;

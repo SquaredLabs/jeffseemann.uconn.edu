@@ -1,13 +1,48 @@
-/* Desktop, Tablet */
+/* Desktop */
 .uconn-logo{
     width: 3.681em;
     padding-top: 2.3em;
 }
+.header-wrapper {
+    padding-top: 0.625em;
+    padding-bottom: 7.563em;
+    display: flex;
+    justify-content: space-between;
+}
 .header-name {
-    margin: 0;
-    padding-top: .17em;
-    padding-bottom: 2em;
     font-size: 3.69em;
+    margin: 0;
+}
+.header-name-hidden {
+    font-size: 3.69em;
+    margin: 0;
+    display: none;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .header-wrapper {
+        flex-direction: column;
+        text-align: right;
+    }
+    .header-container {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-top: 2.313em;
+    }
+    .header-name-hidden {
+        display: initial;
+    }
+}
+/* Tablet 2 */
+@media screen and (min-width: 481px) and (max-width: 560px) {
+    .header-name {
+        font-size: 2.938em;
+    }
+    .header-name-hidden {
+        font-size: 2.938em;
+        display: initial;
+    }
 }
 /* Mobile */
 @media screen and (min-width: 361px) and (max-width: 480px) {
@@ -17,8 +52,16 @@
         justify-content: space-between;
         padding-top: 2.313em;
     }
+    .header-wrapper {
+        flex-direction: column;
+        text-align: right;
+    }
     .header-name {
         font-size: 2.313em;
+    }
+    .header-name-hidden {
+        font-size: 2.313em;
+        display: initial;
     }
 }
 /* Mobile 2 */
@@ -32,9 +75,19 @@
         justify-content: space-between;
         padding-top: 2.313em;
     }
+    .header-wrapper {
+        flex-direction: column;
+        text-align: right;
+    }
     .header-name {
         padding-left: .25em;
         text-align: right;
         font-size: 1.813em;
+    }
+    .header-name-hidden {
+        padding-left: .25em;
+        text-align: right;
+        font-size: 1.813em;
+        display: initial;
     }
 }

@@ -77,7 +77,7 @@ class Publications extends Component {
 
     return <div className="publications-container">
       <div className="publications-container-extra">
-        <Header />
+        <Header page="Publications"/>
       </div>
       {/* TODO: fix sticky scrolling */}
       <div className="publications-nextprev-container">

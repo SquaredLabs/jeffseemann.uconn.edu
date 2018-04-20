@@ -9,7 +9,7 @@ import './styles.css'
 class Reading extends Component {
     render = () =>
       <div className="reading-container">
-        <Header />
+        <Header page="Reading"/>
         <NowReading />
         <PastReading />
       </div>

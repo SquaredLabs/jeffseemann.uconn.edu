@@ -43,7 +43,7 @@ class About extends Component {
 
     return <div className="about-container">
       <div className="about-left">
-        <Header />
+        <Header page="About" hideWithNav={true}/>
         <div className="about-wrapper">
           <img className="about-img" alt="" src={imageUrl}></img>
           <div className="about-desc" style={black} dangerouslySetInnerHTML={description}></div>

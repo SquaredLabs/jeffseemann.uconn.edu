@@ -75,7 +75,7 @@ class Courses extends Component {
 
     return <div className="courses-container">
       <div className="courses-container-extra">
-        <Header />
+        <Header page="Courses"/>
       </div>
       {/* TODO: fix sticky scrolling */}
       <div className="courses-nextprev-container">

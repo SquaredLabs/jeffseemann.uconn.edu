@@ -1,7 +1,7 @@
 import url from 'url'
 
 export const siteProtocol = 'http:'
-export const siteHostname = 'admin.seemannlab.uconn.edu' // eslint-disable-line
+export const siteHostname = 'jeffwebsite.test' // 'admin.seemannlab.uconn.edu' // eslint-disable-line
 
 /**
  * Generic fetch to make api calls

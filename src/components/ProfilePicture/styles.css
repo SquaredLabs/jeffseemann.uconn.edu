@@ -5,6 +5,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.profile-pictures-container:last-child {
+    padding-bottom: 2.719em;
+}
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 1025px) {
 }
@@ -140,6 +143,9 @@
 @media screen and (max-width: 480px) {
     .profile-container {
         margin: .438em;
+    }
+    .profile-container:last-child {
+        padding-bottom: 2.719em;
     }
     .lab-about-img {
         width: 207px;
