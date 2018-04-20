@@ -14,7 +14,6 @@ import Courses from './components/Courses'
 import About from './components/About'
 import NotFound from './components/NotFound'
 
-// import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 
 import './App.css'
@@ -24,7 +23,6 @@ const Layout = ({ children }) =>
   <div>
     <main>
       { children }
-      {/* <Navigation /> */}
     </main>
     <Footer />
   </div>

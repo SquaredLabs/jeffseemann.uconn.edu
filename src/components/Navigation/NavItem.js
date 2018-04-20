@@ -14,7 +14,7 @@ class NavItem extends Component {
     const navItemColor = index === 0 ? 'first' : 'rest'
     const addLastName = (text === 'Lab' && index === 0) ? 'Seemann ' : ''
 
-    return <div className='nav-item' onClick={this.props.onClick}>
+    return <div className='nav-item'>
       <NavLink className={navItemColor} to={link}>
         <span style={styles}>{addLastName}</span>
         {text}
