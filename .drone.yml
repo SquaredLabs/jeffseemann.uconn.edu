@@ -12,11 +12,11 @@ pipeline:
     hosts:
       - ci.core.uconn.edu
     source: ./build/*
-    target: ~/jeff-website-${DRONE_BUILD_NUMBER}
+    target: ~/jeffseemann-${DRONE_BUILD_NUMBER}
     delete: true
     script:
-      - TARGET_PATH=~/jeff-website-${DRONE_BUILD_NUMBER}
-      - DEPLOY_PATH=/srv/nginx/pages/ci/jeff-website/${DRONE_BRANCH}/public
+      - TARGET_PATH=~/jeffseemann-${DRONE_BUILD_NUMBER}
+      - DEPLOY_PATH=/srv/nginx/pages/ci/jeffseemann/${DRONE_BRANCH}/public
       - mkdir -p $DEPLOY_PATH
       - rsync -az --delete $TARGET_PATH/* $DEPLOY_PATH
       - rm -rf $TARGET_PATH
