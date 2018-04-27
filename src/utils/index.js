@@ -1,7 +1,7 @@
 import url from 'url'
 
-export const siteProtocol = 'http:'
-export const siteHostname = 'jeffwebsite.test' // 'admin.seemannlab.uconn.edu' // eslint-disable-line
+export const siteProtocol = process.env.REACT_APP_DIRECTUS_PROTOCOL
+export const siteHostname = process.env.REACT_APP_DIRECTUS_HOSTNAME
 
 /**
  * Generic fetch to make api calls
