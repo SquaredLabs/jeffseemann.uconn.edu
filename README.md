@@ -33,12 +33,12 @@ Before trying to clone the repository, ensure you have a [public/private key pai
 ### Clone the Repositories
 The CMS is a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) so you'll need to clone two repositories.
 ```sh
-git clone --recurse-submodules git@github.com:SquaredLabs/Jeff-Website.git
+git clone --recurse-submodules git@github.com:SquaredLabs/jeffseemann.uconn.edu.git
 ```
 
 ### Install Dependencies
 ```sh
-cd Jeff-Website/
+cd jeffseemann.uconn.edu/
 npm install
 ```
 
@@ -52,7 +52,7 @@ quit;
 
 ### Seed initial data and assets:
 Get an initial dump of Jeff's website to [import](https://s3.core.uconn.edu/minio/login).
-Download image assets and place in `Jeff-Website/cms/storage/`.
+Download image assets and place in `jeffseemann.uconn.edu/cms/storage/`.
 ```sh
 gunzip jeffwebsiteDatabase.sql.gz
 mysql < jeffwebsiteDatabase.sql
@@ -68,7 +68,7 @@ sudo apt install php7.1-xml
 ### Set up Nginx
 Copy the `default` file from the [Directus respository](https://github.com/directus/directus-vagrant/tree/master/config/nginx) into the file `jeff-website.com`. See file path below.
 Optionally, you could create this file in `/etc/nginx/sites-available/` and create a symbolic link to `/etc/nginx/sites-enabled/`.
-Change the line `root /var/www/html;` to `root /home/$USER/Jeff-Website/cms`, where $USER is the name of your machine. Remove the line `include pagespeed.conf;` from the file.
+Change the line `root /var/www/html;` to `root /home/$USER/jeffseemann.uconn.edu/cms`, where $USER is the name of your machine. Remove the line `include pagespeed.conf;` from the file.
 Change the line `server_name localhost;` to `server_name jeffwebsite.test;` since you'll probably be using localhost for something else.
 Change the line `fastcgi_pass unix:/var/run/php5-fpm.sock;` to `fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;` or with whichever version of php you are using and the appropriate file path.
 ```sh
@@ -80,8 +80,8 @@ sudo vim /etc/hosts
 ```
 Give nginx/php the ability to write to this folder. Change owner of repository to your user.
 ```sh
-chmod -R 775 ~/Jeff-Website/cms/
-sudo chown -R $USER:www-data ~/Jeff-Website
+chmod -R 775 ~/jeffseemann.uconn.edu/cms/
+sudo chown -R $USER:www-data ~/jeffseemann.uconn.edu
 ```
 
 ### Install CMS dependencies
@@ -93,6 +93,6 @@ composer install
 
 ### Launch Project
 ```sh
-cd Jeff-Website/
+cd jeffseemann.uconn.edu/
 npm start
 ```
