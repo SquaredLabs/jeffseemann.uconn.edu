@@ -18,6 +18,9 @@
     margin: 0;
     display: none;
 }
+.header-hidden {
+    display: none;
+}
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 767px) {
     .header-wrapper {

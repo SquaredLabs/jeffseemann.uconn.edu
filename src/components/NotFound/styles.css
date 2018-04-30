@@ -1,0 +1,105 @@
+/* index.js */
+/* Desktop */
+.notfound-container {
+    padding: 0 5.938em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-height: 100vh;
+}
+.notfound-header {
+    grid-column: 1 / span 2;
+}
+.notfound-left {
+    grid-column: 1;
+}
+.notfound-right {
+    grid-column: 2;
+}
+.notfound-right-mobile {
+    display: none;
+}
+.notfound-404 {
+    font-size: 7.563em;
+}
+.notfound-error {
+    font-size: 2.313em;
+}
+/* Tablet */
+@media screen and (min-width: 481px) and (max-width: 1025px) {
+    .notfound-container {
+        padding: 0 1.250em;
+    }
+    .notfound-error {
+        font-size: 1.813em;
+    }
+}
+/* Tablet 2 */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .notfound-container {
+        grid-template-columns: auto;
+    }
+    .notfound-header {
+        grid-column: 1;
+    }
+    .notfound-right {
+        display: none;
+        grid-column: 1;
+    }
+    .notfound-right-mobile {
+        display: initial;
+    }
+    .notfound-404 {
+        font-size: 5.928em;
+    }
+    /* from Header/styles.css */
+    .page-notfound .header-container {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-top: 2.313em;
+    }
+    .page-notfound .header-wrapper {
+        padding-bottom: 0.813em;
+    }
+    /* from Nagivation/styles.css */
+    .page-notfound .nav-container {
+        padding: 0;
+    }
+}
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .notfound-container {
+        grid-template-columns: auto;
+        padding: 0 .875em;
+    }
+    .notfound-header {
+        grid-column: 1;
+    }
+    .notfound-right {
+        display: none;
+        grid-column: 1;
+    }
+    .notfound-right-mobile {
+        display: initial;
+    }
+    .notfound-404 {
+        font-size: 1.438em;
+    }
+    .notfound-error {
+        font-size: .875em;
+    }
+    /* from Header/styles.css */
+    .page-notfound .header-container {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        padding-top: 2.313em;
+    }
+    .page-notfound .header-wrapper {
+        padding-bottom: 0.813em;
+    }
+    /* from Nagivation/styles.css */
+    .page-notfound .nav-container {
+        padding: 0;
+    }
+}
