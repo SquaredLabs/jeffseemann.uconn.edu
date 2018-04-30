@@ -6,6 +6,7 @@ import _ from 'lodash'
 
 import Header from '../Header'
 import PublicationTile from './PublicationTile'
+import Menu from '../Navigation/Menu'
 import WordWheel from './WordWheel'
 import YearsBreadCrumbs from '../YearsBreadCrumbs'
 
@@ -106,6 +107,7 @@ class Publications extends Component {
           <div style={black} onClick={this.scrollToTop}>To top</div>
         </div>
       </div>
+      <Menu />
     </div>
   }
 }

@@ -183,28 +183,34 @@
 .course-img-expand {
     width: 12px;
     height: 20px;
-    margin-top: 5.5em;
     padding-right: .625em;
 }
 .course-img-expand:hover {
     cursor: pointer;
 }
 .course-info-container {
-    max-width: 8.072em;
+    max-width: 8.837em;
 }
 .course-name {
     font-size: 1.438em;
     font-weight: bold;
     padding-top: .609em;
+    padding-left: 0.957em;
     padding-bottom: 0.130em;
 }
 .course-signature {
     font-size: .875em;
+    padding-left: 1.571em;
     padding-bottom: 0.214em;
 }
 .course-professor {
     font-size: .875em;
+    padding-left: 1.571em;
     padding-bottom: 0.786em;
+}
+.course-img-container {
+    display: flex;
+    align-items: center;
 }
 .course-description {
     font-size: .875em;
@@ -220,19 +226,20 @@
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 1025px) {
     .course-img-expand {
-        margin-top: 4.375em;
         padding-right: .50em;
     }
     .course-info-container {
-        max-width: 6.154em;
+        max-width: 6.939em;
     }
     .course-name {
         font-size: 1.250em;
     }
     .course-signature {
+        padding-left: 2em;
         font-size: .668em;
     }
     .course-professor {
+        padding-left: 2em;
         font-size: .668em;
     }
     .course-description {
@@ -242,16 +249,18 @@
 /* Mobile */
 @media screen and (max-width: 480px) {
     .course-img-expand {
-        margin-top: 3.5em;
         padding-right: .625em;
     }
     .course-name {
+        padding-left: 1.571em;
         font-size: .875em;
     }
     .course-signature {
+        padding-left: 2em;
         font-size: .668em;
     }
     .course-professor {
+        padding-left: 2em;
         font-size: .668em;
     }
     .course-description {

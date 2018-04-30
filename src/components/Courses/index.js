@@ -6,6 +6,7 @@ import _ from 'lodash'
 
 import Header from '../Header'
 import CourseTile from './CourseTile'
+import Menu from '../Navigation/Menu'
 import YearsBreadCrumbs from '../YearsBreadCrumbs'
 
 import './styles.css'
@@ -95,6 +96,7 @@ class Courses extends Component {
           <div style={black} onClick={this.scrollToTop}>To top</div>
         </div>
       </div>
+      <Menu />
       <YearsBreadCrumbs
         yearClickAction={this.showMoreCourses}
         yearsNav={this.state.yearsNav}

@@ -20,13 +20,10 @@ class Navigation extends Component {
     }
   }
 
-  render () {
-    const { navItems } = this.state
-
-    return <div className="nav-container">
-      { navItems.map((item, i) => <NavItem index={i} key={item.name} {...item} />) }
+  render = () =>
+    <div className="nav-container">
+      { this.state.navItems.map((item, i) => <NavItem index={i} key={item.name} {...item} />) }
     </div>
-  }
 }
 
 export default withRouter(Navigation)

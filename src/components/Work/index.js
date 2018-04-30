@@ -3,6 +3,7 @@ import { colors } from '../../config'
 
 import Header from '../Header'
 import AvailablePositions from './AvailablePositions'
+import Menu from '../Navigation/Menu'
 
 import './styles.css'
 
@@ -31,6 +32,7 @@ class Work extends Component {
         Send us an email with a cover letter discussing what it is you’d like to do at the lab,
         and why you want to engage with us. Include your resume/CV as well (both in PDF format).
       </div>
+      <Menu />
     </div>
 }
 

@@ -25,15 +25,17 @@ class Course extends Component {
       : <div></div>
 
     return <div className="course-container">
-      <img className="course-img-expand" alt="icon" onClick={this.toggleShow}
-        src={this.state.show ? 'assets/img/Collapse_Text.png' : 'assets/img/Expand_Text.png'}></img>
       <div className="course-info-container">
         <div className="course-name" style={black}>{name}</div>
         <div className="course-signature" style={gray}>
           {number} &middot; {credits}
         </div>
         <div className="course-professor" style={black}>{professor}</div>
-        <div className="course-description" style={black} onClick={this.toggleShow}>Course Description</div>
+        <div className="course-img-container">
+          <img className="course-img-expand" alt="icon" onClick={this.toggleShow}
+            src={this.state.show ? 'assets/img/Collapse_Text.png' : 'assets/img/Expand_Text.png'}></img>
+          <div className="course-description" style={black} onClick={this.toggleShow}>Course Description</div>
+        </div>
         {showDescription}
       </div>
     </div>

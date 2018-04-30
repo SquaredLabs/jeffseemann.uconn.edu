@@ -4,9 +4,7 @@ import { colors } from '../../config'
 
 import './styles.css'
 
-const styles = {
-  color: colors.siteGray
-}
+const styles = { color: colors.siteGray }
 
 class NavItem extends Component {
   render () {
