@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-scroll-lock": "^2.3.8",
     "dotenv": "^5.0.1",
     "editorconfig": "^0.15.0",
     "lodash": "^4.17.5",
