@@ -122,19 +122,29 @@
 /* Partner.js */
 /* Desktop */
 .partner-container {
-    display: flex;
+    max-width: 10.875em;
     padding: .75em 5.125em .75em 0em;
-}
-.partner-img {
-    padding-top: 1.688em;
-    padding-right: .5em;
 }
 .partner-title {
     font-size: 1.438em;
     font-weight: bold;
+    padding-left: 0.913em;
 }
 .partner-subtitle {
+    font-family: Recta-Cond;
     display: inline;
+    font-size: .875em;
+}
+.partner-img {
+    width: 12px;
+    height: 20px;
+    padding-right: .5em;
+}
+.partner-img:hover {
+    cursor: pointer;
+}
+.partner-description {
+    padding-top: .375em;
     font-size: .875em;
 }
 /* Tablet */
@@ -148,13 +158,7 @@
     .partner-container {
         padding: .875em 0;
     }
-    .partner-img {
-        padding-top: 1.438em;
-    }
     .partner-title {
         font-size: 1.125em;
-    }
-    .partner-subtitle {
-        font-size: .875em;
     }
 }
