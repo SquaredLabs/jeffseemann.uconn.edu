@@ -4,6 +4,7 @@ import { apiUri, colors } from '../../config'
 
 import Header from '../Header'
 import Navigation from '../Navigation'
+import Menu from '../Navigation/Menu'
 
 import './styles.css'
 
@@ -52,6 +53,9 @@ class About extends Component {
       </div>
       <div className="about-right">
         <Navigation />
+      </div>
+      <div className="about-menu">
+        <Menu />
       </div>
     </div>
   }

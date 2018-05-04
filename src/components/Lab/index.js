@@ -3,6 +3,7 @@ import { apiFetch, apiImageUrl } from '../../utils'
 import { apiUri, colors } from '../../config'
 
 import Navigation from '../Navigation'
+import Menu from '../Navigation/Menu'
 import ProfilePicture from '../ProfilePicture'
 import ProfilePictureItem from '../ProfilePicture/ProfilePictureItem'
 
@@ -36,13 +37,30 @@ class Lab extends Component {
         second_image: { data: { url: '' } },
         third_image: { data: { url: '' } },
         lab_bottom_description: ''
-      }
+      },
+      menu: 'lab-show-menu'
     }
+    this.handleScroll = this.handleScroll.bind(this)
   }
 
   componentDidMount () {
     this.generateProfilePictures()
     this.labContent()
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll () {
+    // Perform a boolean XOR operation to only display menu in 2nd and 3rd quadrants - spaghetti!
+    const a = window.innerHeight - window.scrollY < 0
+    const b = document.documentElement.offsetHeight - window.scrollY <= 2 * window.innerHeight
+    const className = (a || b) && !(a && b)
+      ? ''
+      : 'lab-show-menu'
+    this.setState({ menu: className })
   }
 
   async generateProfilePictures () {
@@ -72,6 +90,7 @@ class Lab extends Component {
   }
 
   render () {
+    console.log(this.state.menu)
     const uriImageLeft = apiImageUrl(this.state.content.first_image.data.url)
     const uriImageCenter = apiImageUrl(this.state.content.second_image.data.url)
     const uriImageRight = apiImageUrl(this.state.content.third_image.data.url)
@@ -102,18 +121,10 @@ class Lab extends Component {
       </div>
 
       <div className="second-container">
-        <div className="lab-header-name-visible" style={gray}>
-          Seemann
-          <span style={green}> Lab</span>
-        </div>
         {this.state.members}
       </div>
 
       <div style={backgroundBlack} className="third-container">
-        <div className="lab-header-name-visible-2" style={gray}>
-          Seemann
-          <span style={green}> Lab</span>
-        </div>
         <div className="third-container-wrapper">
           <div className="lab-first-container">
             <div style={white} className="lab-description" dangerouslySetInnerHTML={labDescription}></div>
@@ -144,6 +155,9 @@ class Lab extends Component {
         <div className="right-half">
           <Navigation />
         </div>
+      </div>
+      <div className={this.state.menu}>
+        <Menu />
       </div>
     </div>
   }

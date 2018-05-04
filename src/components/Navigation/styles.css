@@ -77,6 +77,8 @@ a.rest {
     height: 100vh;
     backdrop-filter: blur(1px);
     background-color: rgba(254, 255, 250, 0.9);
+    padding-right: 5.938em;
+    transform: translateX(5.938em);
 }
 .page-menu a.rest {
     color: #5b605d;
@@ -85,6 +87,8 @@ a.rest {
 @media screen and (min-width: 481px) and (max-width: 1025px) {
     .menu-navigation-open {
         right: 1.250em;
+        padding-right: 1.250em;
+        transform: translateX(1.250em);
     }
     .menu-button {
         top: initial;
@@ -95,6 +99,8 @@ a.rest {
 @media screen and (max-width: 480px) {
     .menu-navigation-open {
         right: .875em;
+        padding-right: .875em;
+        transform: translateX(.875em);
     }
     .menu-button {
         top: 30.750em;

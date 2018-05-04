@@ -11,6 +11,10 @@
 .about-right {
     grid-column: 2;
 }
+.about-right > * {
+    position: sticky;
+    top: 0;
+}
 .about-img {
     /* 2.750em - 1.438em (default top margin relative to 1.438em font-size on <p> */
     padding-bottom: 1.312em;
@@ -42,7 +46,9 @@
 .about-contact p {
     margin-top: 0;
 }
-
+.about-menu {
+    display: none;
+}
 /* Tablet */
 @media screen and (min-width: 481px) and (max-width: 1025px) {
     .about-container {
@@ -58,6 +64,9 @@
 @media screen and (min-width: 481px) and (max-width: 767px) {
     .about-right {
         display: none;
+    }
+    .about-menu {
+        display: initial;
     }
 }
 
@@ -81,5 +90,8 @@
     }
     .about-contact {
         font-size: 1.438em;
+    }
+    .about-menu {
+        display: initial;
     }
 }
