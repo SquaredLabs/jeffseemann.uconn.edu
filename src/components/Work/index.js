@@ -16,9 +16,15 @@ class Work extends Component {
     <div className="work-container">
       <Header page="Work"/>
       <div className="work-image-banner">
-        <img className="work-image-banner-img" alt="236x382" src="assets/img/236x382.png"></img>
-        <img className="work-image-banner-img" alt="236x382" src="assets/img/236x382.png"></img>
-        <img className="work-image-banner-img" alt="236x382" src="assets/img/236x382.png"></img>
+        <div className="work-image-container">
+          <img alt="liv1" src="assets/img/liv_1.jpg"></img>
+        </div>
+        <div className="work-image-container">
+          <img alt="phone" src="assets/img/phone.jpg"></img>
+        </div>
+        <div className="work-image-container">
+          <img alt="liv2" src="assets/img/liv_2.jpg"></img>
+        </div>
       </div>
       <div className="work-banner-1" style={green}>Seemann Lab is always hiring.</div>
       <AvailablePositions />

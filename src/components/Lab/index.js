@@ -57,9 +57,7 @@ class Lab extends Component {
     // Perform a boolean XOR operation to only display menu in 2nd and 3rd quadrants - spaghetti!
     const a = window.innerHeight - window.scrollY < 0
     const b = document.documentElement.offsetHeight - window.scrollY <= 2 * window.innerHeight
-    const className = (a || b) && !(a && b)
-      ? ''
-      : 'lab-show-menu'
+    const className = (a || b) && !(a && b) ? '' : 'lab-show-menu'
     this.setState({ menu: className })
   }
 
@@ -90,7 +88,6 @@ class Lab extends Component {
   }
 
   render () {
-    console.log(this.state.menu)
     const uriImageLeft = apiImageUrl(this.state.content.first_image.data.url)
     const uriImageCenter = apiImageUrl(this.state.content.second_image.data.url)
     const uriImageRight = apiImageUrl(this.state.content.third_image.data.url)
