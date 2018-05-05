@@ -46,7 +46,7 @@ npm install
 If you are having difficulties logging in, look up a [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql) tutorial! You'll use this database name later.
 ```sh
 mysql -u $USER -p
-create database jeffwebsite;
+create database jeffseemann;
 quit;
 ```
 
@@ -54,8 +54,8 @@ quit;
 Get an initial dump of Jeff's website to [import](https://s3.core.uconn.edu/minio/login).
 Download image assets and place in `jeffseemann.uconn.edu/cms/storage/`.
 ```sh
-gunzip jeffwebsiteDatabase.sql.gz
-mysql < jeffwebsiteDatabase.sql
+gunzip jeffseemannDatabase.sql.gz
+mysql < jeffseemannDatabase.sql
 ```
 
 ### Install required php packages:
@@ -66,15 +66,15 @@ sudo apt install php7.1-xml
 ```
 
 ### Set up Nginx
-Copy the `default` file from the [Directus respository](https://github.com/directus/directus-vagrant/tree/master/config/nginx) into the file `jeff-website.com`. See file path below.
+Copy the `default` file from the [Directus respository](https://github.com/directus/directus-vagrant/tree/master/config/nginx) into the file `jeffseemann`. See file path below.
 Optionally, you could create this file in `/etc/nginx/sites-available/` and create a symbolic link to `/etc/nginx/sites-enabled/`.
 Change the line `root /var/www/html;` to `root /home/$USER/jeffseemann.uconn.edu/cms`, where $USER is the name of your machine. Remove the line `include pagespeed.conf;` from the file.
-Change the line `server_name localhost;` to `server_name jeffwebsite.test;` since you'll probably be using localhost for something else.
+Change the line `server_name localhost;` to `server_name jeffseemann.test;` since you'll probably be using localhost for something else.
 Change the line `fastcgi_pass unix:/var/run/php5-fpm.sock;` to `fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;` or with whichever version of php you are using and the appropriate file path.
 ```sh
-sudo vim /etc/nginx/sites-enabled/jeff-website.com
+sudo vim /etc/nginx/sites-enabled/jeffseemann
 ```
-Update your hosts file to include your recent addition. Add the line `127.0.0.1 jeffwebsite.test`.
+Update your hosts file to include your recent addition. Add the line `127.0.0.1 jeffseemann.test`.
 ```sh
 sudo vim /etc/hosts
 ```
@@ -85,7 +85,7 @@ sudo chown -R $USER:www-data ~/jeffseemann.uconn.edu
 ```
 
 ### Install CMS dependencies
-After doing this, navigate to jeffwebsite.test/login.php in your browser to see the CMS.
+After doing this, navigate to jeffseemann.test/login.php in your browser to see the CMS.
 ```sh
 cd cms/
 composer install
