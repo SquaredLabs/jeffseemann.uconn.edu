@@ -1,7 +1,7 @@
 import url from 'url'
+import qs from 'qs'
 
-export const siteProtocol = process.env.REACT_APP_DIRECTUS_PROTOCOL
-export const siteHostname = process.env.REACT_APP_DIRECTUS_HOSTNAME
+export const endpoint = process.env.REACT_APP_DIRECTUS_ENDPOINT || '/'
 
 /**
  * Generic fetch to make api calls
@@ -26,7 +26,9 @@ export function apiFetchGeneric (protocol, hostname, pathname, query, ...args) {
  * @param {*} args - headers
  */
 export function apiFetch (pathname, query, ...args) {
-  return apiFetchGeneric(siteProtocol, siteHostname, pathname, query, ...args)
+  const path = url.resolve(endpoint, pathname + '?' + qs.stringify(query))
+  return fetch(path, ...args)
+    .then(response => response.json())
 }
 
 export function apiImageUrlGeneric (obj, imageurl) {
@@ -34,5 +36,5 @@ export function apiImageUrlGeneric (obj, imageurl) {
 }
 
 export function apiImageUrl (imageurl) {
-  return siteProtocol + '//' + siteHostname + imageurl
+  return url.resolve(endpoint, imageurl)
 }
