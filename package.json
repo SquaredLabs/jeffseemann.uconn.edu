@@ -44,10 +44,10 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://jeffseemann.test"
+      "target": "http://admin.jeffseemann.uconn.edu"
     },
     "/storage": {
-      "target": "http://jeffseemann.test"
+      "target": "http://admin.jeffseemann.uconn.edu"
     }
   }
 }
