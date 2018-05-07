@@ -2,7 +2,7 @@ pipeline:
 
   frontend:
     image: node:9
-    secrets: [ react_app_directus_hostname, react_app_directus_protocol ]
+    secrets: [ react_app_directus_endpoint ]
     commands:
       - npm install
       - npm run build
