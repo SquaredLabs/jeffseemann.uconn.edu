@@ -29,9 +29,9 @@ class Publication extends Component {
     const showAbstract = this.state.show
       ? <div className="publication-abstract-text" style={black}>
         {abstract}
-        <div className="publication-abstract-readmore">
+        {url ? <div className="publication-abstract-readmore">
           <a className="publication-abstract-readmore-link" href={url} target="_blank">Read more!</a>
-        </div>
+        </div> : 'N/A'}
       </div>
       : <div></div>
 
