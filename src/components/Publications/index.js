@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
+import scrollToComponent from 'react-scroll-to-component';
+
 import { apiFetch } from '../../utils'
 import { apiUri, colors } from '../../config'
 import _ from 'lodash'
@@ -19,11 +21,13 @@ const defaultYearsToDisplay = 2
 class Publications extends Component {
   constructor (props) {
     super(props)
-
+    this.scrollPoints = { }
     this.state = {
       publications: [],
       years: [],
       yearsNav: [],
+      yearRefs: [],
+      currentScolledYear: 0,
       // Keep track of these two states so that nonconsecutive years load perfectly
       // while breadcrumbs navigation bar allows quick filtering by year
       untilYearToDisplay: 0,
@@ -64,30 +68,54 @@ class Publications extends Component {
       publications: response.data,
       years: years,
       yearsNav: yearsNav,
+      currentScolledYear: this.state.currentScolledYear === 0 ? _.max(years) : this.state.currentScolledYear,
       untilYearToDisplay: _.max(years) - defaultYearsToDisplay
     })
   }
+  newerPublication = () => {
+    const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear);
+    if (currentYearIndex === -1) return
 
-  render () {
+    const nextYear = this.state.years[currentYearIndex - 1]
+    scrollToComponent(this.scrollPoints[nextYear+'TOP'])
+  }
+  olderPublication = () => {
+    this.showMorePublications()
+    const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear);
+    if (currentYearIndex === -1) return
+
+    const nextYear = this.state.years[currentYearIndex + 1]
+    console.log(nextYear)
+    scrollToComponent(this.scrollPoints[nextYear+'TOP'])
+  }
+
+  render = () => {
     // Display subset of publications grouped by year
+    this.scrollPoints = {}
     const PublicationTiles = this.state.years.slice(0, this.state.atLeastNumToDisplay)
       .map((year, i) => {
         const relevantPublications = this.state.publications.filter(course => course.year === year)
-        return <PublicationTile year={year} ref={year} publications={relevantPublications} key={i} />
+        let ref = year + 'Secondary'
+        if (!this.scrollPoints[year + 'TOP']) {
+          ref = year + 'TOP'
+        }
+        return <PublicationTile year={year} ref={(section) => {
+          this.scrollPoints[ref] = section
+          //console.log(this.scrollPoints)
+          return year
+        }} publications={relevantPublications} key={i} />
       })
-
     return <div className="publications-container">
       <div className="publications-container-extra">
         <Header page="Publications"/>
       </div>
-      {/* TODO: fix sticky scrolling */}
       <div className="publications-nextprev-container">
-        <div className="publications-next">
+        <div className="publications-next" onClick={this.newerPublication}>
           <div className="publications-next-arrow">&uarr;</div>
-          <div className="publications-rotate" style={black}>Next</div>
+          <div className="publications-rotate" style={black}>Newer</div>
         </div>
-        <div className="publications-prev">
-          <div className="publications-rotate" style={black}>Previous</div>
+        <div className="publications-prev" onClick={this.olderPublication}>
+          <div className="publications-rotate" style={black}>Older</div>
           <div>&darr;</div>
         </div>
       </div>
