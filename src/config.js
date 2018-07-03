@@ -43,13 +43,6 @@ export const nav = [
   }
 ]
 
-export const foot = [
-  'jeff.seemann@uconn.edu',
-  '+1 860 555 5555',
-  '123 Drury Lane, Storrs, CT 06269',
-  'assets/img/DAndDBy.svg'
-]
-
 export const colors = {
   uconnBlue: '#0f1938',
   siteGreen: '#49ea7f',
@@ -95,5 +88,14 @@ export const apiUri = {
   },
   publications: {
     pathname: '/api/1.1/tables/publications/rows'
+  },
+  contact_address: {
+    pathname: '/api/1.1/tables/contact_address/rows'
+  },
+  contact_email: {
+    pathname: '/api/1.1/tables/contact_email/rows'
+  },
+  contact_phone: {
+    pathname: '/api/1.1/tables/contact_phone/rows'
   }
 }
