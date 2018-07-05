@@ -21,7 +21,7 @@ const defaultYearsToDisplay = 2
 class Publications extends Component {
   constructor (props) {
     super(props)
-    this.scrollPoints = { }
+    this.scrollPoints = {}
     this.state = {
       publications: [],
       years: [],
@@ -60,6 +60,13 @@ class Publications extends Component {
     })
   }
 
+  skipUntilPublication = (year) => {
+    this.showUntilPublication(year)
+    this.setState({ currentScolledYear: year })
+    // Timeout is necessary for animations to complete and refs to be generated.
+    setTimeout(() => { scrollToComponent(this.scrollPoints[year + 'TOP']) }, 300)
+  }
+
   async getPublications () {
     const response = await apiFetch(apiUri.publications.pathname)
     const years = _.uniq(response.data.map(publication => publication.year)).sort((a, b) => b - a)
@@ -72,6 +79,7 @@ class Publications extends Component {
       untilYearToDisplay: _.max(years) - defaultYearsToDisplay
     })
   }
+
   newerPublication = () => {
     const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear)
     if (currentYearIndex === -1) return
@@ -79,6 +87,7 @@ class Publications extends Component {
     this.setState({ currentScolledYear: nextYear })
     scrollToComponent(this.scrollPoints[nextYear + 'TOP'])
   }
+
   olderPublication = () => {
     this.showMorePublications()
     const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear)
@@ -100,7 +109,6 @@ class Publications extends Component {
         }
         return <PublicationTile year={year} ref={(section) => {
           this.scrollPoints[ref] = section
-          //console.log(this.scrollPoints)
           return year
         }} publications={relevantPublications} key={i} />
       })
@@ -124,9 +132,9 @@ class Publications extends Component {
           <WordWheel data={this.state.publications} years={this.state.years}/>
         </div>
         <YearsBreadCrumbs
-          yearClickAction={this.showMorePublications}
+          yearClickAction={this.skipUntilPublication}
           yearsNav={this.state.yearsNav}
-          showUntil={this.showUntilPublication} />
+          loadMoreAction={this.showMorePublications} />
       </div>
       <div className="publications-totop-container">
         <div className="publications-totop">
