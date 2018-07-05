@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+  import React, { Component } from 'react'
 import sw from 'stopword'
 import { colors } from '../../config'
 import _ from 'lodash'
@@ -36,7 +36,7 @@ class WordWheel extends Component {
   }
 
   render () {
-    const { data, years } = this.props
+    const { data, years, currentYearIndex } = this.props
 
     const freq = this.getFrequencyDict(data, years)
 
@@ -45,9 +45,9 @@ class WordWheel extends Component {
     let sz = 2.938
     let index = 0
     _.forEach(freq, (value, key) => {
-      if (index === 1) { sz = 2.313 }
-      if (index === years.length - 2) { sz = 2.938 }
-      if (index === years.length - 1) { sz = 3.668 }
+      // if (index === 1) { sz = 2.313 }
+      // if (index === years.length - 2) { sz = 2.938 }
+      // if (index === years.length - 1) { sz = 3.668 }
       const valueStyle = _.assign({}, index === years.length - 1 ? green : black, { 'fontSize': `${sz}em` })
       const keyStyle = index === years.length - 1 ? green : black
       index += 1
@@ -57,13 +57,13 @@ class WordWheel extends Component {
 
     return <div className="WordWheel-container">
       <div className="WordWheel-key-container">
-        {keys.slice(-3)}
+        {keys.reverse()}
       </div>
       <div className="WordWheel-bar-container">
         <div className="WordWheel-bar" style={greenFill}></div>
       </div>
       <div className="WordWheel-value-container">
-        {values.slice(-3).concat(values.slice(0, 2))}
+        {values.reverse()}
       </div>
     </div>
   }

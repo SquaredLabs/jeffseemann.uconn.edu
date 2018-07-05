@@ -100,6 +100,7 @@ class Publications extends Component {
   render = () => {
     // Display subset of publications grouped by year
     this.scrollPoints = {}
+    let currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear)
     const PublicationTiles = this.state.years.slice(0, this.state.atLeastNumToDisplay)
       .map((year, i) => {
         const relevantPublications = this.state.publications.filter(course => course.year === year)
@@ -129,7 +130,8 @@ class Publications extends Component {
       <div className="publications-inner-container">
         <div>{PublicationTiles}</div>
         <div className="publications-word-wheel">
-          <WordWheel data={this.state.publications} years={this.state.years}/>
+          <WordWheel data={this.state.publications} years={this.state.years}
+            currentYearIndex={currentYearIndex} />
         </div>
         <YearsBreadCrumbs
           yearClickAction={this.skipUntilPublication}
