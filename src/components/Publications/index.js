@@ -73,20 +73,19 @@ class Publications extends Component {
     })
   }
   newerPublication = () => {
-    const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear);
+    const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear)
     if (currentYearIndex === -1) return
-
     const nextYear = this.state.years[currentYearIndex - 1]
-    scrollToComponent(this.scrollPoints[nextYear+'TOP'])
+    this.setState({ currentScolledYear: nextYear })
+    scrollToComponent(this.scrollPoints[nextYear + 'TOP'])
   }
   olderPublication = () => {
     this.showMorePublications()
-    const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear);
+    const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear)
     if (currentYearIndex === -1) return
-
     const nextYear = this.state.years[currentYearIndex + 1]
-    console.log(nextYear)
-    scrollToComponent(this.scrollPoints[nextYear+'TOP'])
+    this.setState({currentScolledYear: nextYear})
+    scrollToComponent(this.scrollPoints[nextYear + 'TOP'])
   }
 
   render = () => {
