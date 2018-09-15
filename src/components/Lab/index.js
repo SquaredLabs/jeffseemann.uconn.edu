@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { apiFetch, apiImageUrl } from '../../utils'
+import { apiFetch, apiImageUrl,endpoint } from '../../utils'
 import { apiUri, colors } from '../../config'
 
 import Navigation from '../Navigation'
 import Menu from '../Navigation/Menu'
 import ProfilePicture from '../ProfilePicture'
 import ProfilePictureItem from '../ProfilePicture/ProfilePictureItem'
-
+import {Link} from 'react-router-dom';
 import './styles.css'
 
 const white = { color: colors.profileWhite }
@@ -94,13 +94,11 @@ class Lab extends Component {
     const landingDescription = {__html: this.state.content.landing_description}
     const labDescription = {__html: this.state.content.lab_description}
     const labBottomDescription = {__html: this.state.content.lab_bottom_description}
-
     const collapseHeader =
       <div className="lab-header-name" style={gray}>
         Seemann
         <span style={green}> Lab</span>
       </div>
-
     return <div className="lab-container">
       <div className="first-container">
         <div className="left-half">
@@ -118,7 +116,7 @@ class Lab extends Component {
       </div>
 
       <div className="second-container">
-        {this.state.members}
+       <Link to={'about'}> {this.state.members}  </Link>
       </div>
 
       <div style={backgroundBlack} className="third-container">
@@ -143,8 +141,8 @@ class Lab extends Component {
       </div>
 
       <div className="fourth-container">
-        <div style={gray} className="left-half">
-          <div className="lab-header-container-fourth">
+      <div style={gray} className="left-half">
+      <div className="lab-header-container-fourth">
             {collapseHeader}
           </div>
           <div className="bottom-description" dangerouslySetInnerHTML={labBottomDescription}></div>
