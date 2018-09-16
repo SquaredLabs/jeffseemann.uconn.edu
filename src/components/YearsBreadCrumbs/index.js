@@ -13,7 +13,6 @@ class YearsNavigation extends Component {
      * showUntil - function to update the year to display until
     */
     const { yearClickAction, loadMoreAction, yearsNav } = this.props
-
     // Display years in navigation not already on screen
     const yearsNavFiltered = yearsNav.map((year, i) => {
       return <div className="navigation-year" key={i} onClick={() => yearClickAction(year)}>{year}</div>
