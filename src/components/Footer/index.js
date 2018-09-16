@@ -5,14 +5,13 @@ import { apiFetch } from '../../utils'
 import './styles.css'
 
 class Footer extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
+  
+    state = {
       address: 'Loading',
       email: 'Loading',
       phone: 'Loading',
     }
-  }
+  
   componentDidMount () {
     this.getContact()
   }

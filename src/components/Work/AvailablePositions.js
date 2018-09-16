@@ -7,13 +7,11 @@ import Position from './Position'
 import './styles.css'
 
 class AvailablePositions extends Component {
-  constructor (props) {
-    super(props)
 
-    this.state = {
+    state = {
       positions: []
     }
-  }
+
 
   componentDidMount () {
     this.getPositions()

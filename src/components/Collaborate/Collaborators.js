@@ -7,13 +7,12 @@ import Partner from './Partner'
 import './styles.css'
 
 class Collaborators extends Component {
-  constructor (props) {
-    super(props)
 
-    this.state = {
+
+    state = {
       collaborators: [],
       sponsors: []
-    }
+    
   }
 
   componentDidMount () {

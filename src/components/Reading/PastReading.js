@@ -7,13 +7,11 @@ import './styles.css'
 const blackStyle = { color: colors.siteBlack }
 
 class PastReading extends Component {
-  constructor (props) {
-    super(props)
 
-    this.state = {
+    state = {
       books: []
     }
-  }
+ 
 
   componentDidMount () {
     this.pastReading()

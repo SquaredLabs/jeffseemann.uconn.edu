@@ -19,10 +19,9 @@ const black = { color: colors.siteBlack }
 const defaultYearsToDisplay = 2
 
 class Publications extends Component {
-  constructor (props) {
-    super(props)
-    this.scrollPoints = {}
-    this.state = {
+
+    scrollPoints = {}
+    state = {
       publications: [],
       years: [],
       yearsNav: [],
@@ -33,10 +32,7 @@ class Publications extends Component {
       untilYearToDisplay: 0,
       atLeastNumToDisplay: defaultYearsToDisplay
     }
-    this.showMorePublications = this.showMorePublications.bind(this)
-    this.showUntilPublication = this.showUntilPublication.bind(this)
-  }
-
+  
   componentDidMount () {
     this.getPublications()
   }
@@ -117,11 +113,11 @@ class Publications extends Component {
         <Header page="Publications"/>
       </div>
       <div className="publications-nextprev-container">
-        <div className="publications-next" onClick={this.newerPublication}>
+        <div className="publications-next" onClick={() => this.newerPublication()}>
           <div className="publications-next-arrow">&uarr;</div>
           <div className="publications-rotate" style={black}>Newer</div>
         </div>
-        <div className="publications-prev" onClick={this.olderPublication}>
+        <div className="publications-prev" onClick={() => this.olderPublication()}>
           <div className="publications-rotate" style={black}>Older</div>
           <div>&darr;</div>
         </div>
@@ -132,9 +128,10 @@ class Publications extends Component {
           <WordWheel data={this.state.publications} years={this.state.years}/>
         </div>
         <YearsBreadCrumbs
-          yearClickAction={this.skipUntilPublication}
+          yearClickAction={this.skipUntilPublication.bind(this)}
           yearsNav={this.state.yearsNav}
-          loadMoreAction={this.showMorePublications} />
+          loadMoreAction={this.showMorePublications.bind(this)}
+          context={this} />
       </div>
       <div className="publications-totop-container">
         <div className="publications-totop">

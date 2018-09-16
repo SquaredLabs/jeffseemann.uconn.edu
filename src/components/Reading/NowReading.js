@@ -8,13 +8,11 @@ const grayStyle = { color: colors.siteGray }
 const blackStyle = { color: colors.siteBlack }
 
 class NowReading extends Component {
-  constructor (props) {
-    super(props)
 
-    this.state = {
+  state = {
       books: []
     }
-  }
+  
 
   componentDidMount () {
     this.nowReading()

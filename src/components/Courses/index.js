@@ -16,10 +16,10 @@ const black = { color: colors.siteBlack }
 const defaultYearsToDisplay = 8
 
 class Courses extends Component {
-  constructor (props) {
-    super(props)
+ 
+   
 
-    this.state = {
+    state = {
       courses: [],
       years: [],
       yearsNav: [],
@@ -28,10 +28,7 @@ class Courses extends Component {
       untilYearToDisplay: 0,
       atLeastNumToDisplay: defaultYearsToDisplay
     }
-    this.showMoreCourses = this.showMoreCourses.bind(this)
-    this.showUntilCourse = this.showUntilCourse.bind(this)
-  }
-
+  
   componentDidMount () {
     this.getCourses()
   }
@@ -98,9 +95,9 @@ class Courses extends Component {
       </div>
       <Menu />
       <YearsBreadCrumbs
-        yearClickAction={this.showMoreCourses}
+        yearClickAction={()=> this.showMoreCourses()}
         yearsNav={this.state.yearsNav}
-        showUntil={this.showUntilCourse} />
+        showUntil={()=> this.showUntilCourse()} />
     </div>
   }
 }

@@ -7,13 +7,12 @@ const gray = { color: colors.siteGray }
 const black = { color: colors.siteBlack }
 
 class Partner extends Component {
-  constructor (props) {
-    super(props)
+ 
 
-    this.state = { show: false }
+    state = { show: false }
 
-    this.toggleShow = this.toggleShow.bind(this)
-  }
+    
+  
 
   toggleShow () { this.setState({ show: !this.state.show }) }
 
@@ -26,7 +25,7 @@ class Partner extends Component {
 
     return <div className="partner-container">
       <div className="partner-title" style={black}>{profile.name}</div>
-      <div onClick={this.toggleShow}>
+      <div onClick={() => this.toggleShow()}>
         <img className="partner-img" alt="icon"
           src={this.state.show ? 'assets/img/Collapse_Text.png' : 'assets/img/Expand_Text.png'}></img>
         <div className="partner-subtitle" style={gray}>

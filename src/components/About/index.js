@@ -12,15 +12,13 @@ const gray = { color: colors.siteGray }
 const black = { color: colors.siteBlack }
 
 class About extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
+  
+    state = {
       image: '',
       description: '',
       contact: ''
     }
-  }
+
 
   componentDidMount () {
     this.getAboutContent()

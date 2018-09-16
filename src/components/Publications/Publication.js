@@ -8,16 +8,12 @@ const black = { color: colors.siteBlack }
 const green = { background: colors.siteGreen }
 
 class Publication extends Component {
-  constructor (props) {
-    super(props)
 
-    this.state = {
+    state = {
       show: false,
       collapseImg: 'assets/img/Expand_Text.png'
     }
 
-    this.toggleShow = this.toggleShow.bind(this)
-  }
 
   toggleShow () { this.setState({ show: !this.state.show }) }
 
@@ -45,7 +41,7 @@ class Publication extends Component {
       <div className="publication-abstract-wrapper" style={this.state.show ? green : {}}
         onMouseOver={() => { this.changeImgOnHover('assets/img/Expand_Text_Hover.png') }}
         onMouseOut={() => { this.changeImgOnHover('assets/img/Expand_Text.png') }}>
-        <div className="publication-abstract-header" onClick={this.toggleShow}>
+        <div className="publication-abstract-header" onClick={() => this.toggleShow()}>
           <img className="publication-img-expand" alt="icon"
             src={this.state.show ? 'assets/img/Collapse_Text.png' : this.state.collapseImg}/>
           <div className="publication-abstract" style={this.state.show ? black : {}}>Abstract</div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetch, apiImageUrl,endpoint } from '../../utils'
+import { apiFetch, apiImageUrl} from '../../utils'
 import { apiUri, colors } from '../../config'
 
 import Navigation from '../Navigation'
@@ -16,10 +16,9 @@ const black = { color: colors.siteBlack }
 const backgroundBlack = { background: colors.siteBlack }
 
 class Lab extends Component {
-  constructor (props) {
-    super(props)
+ 
 
-    this.state = {
+    state = {
       // list of profile picture components
       members: [],
       // TODO: replace prototye w/ check if(!this.state.content) <loading icon>
@@ -40,17 +39,16 @@ class Lab extends Component {
       },
       menu: 'lab-show-menu'
     }
-    this.handleScroll = this.handleScroll.bind(this)
-  }
+ 
 
   componentDidMount () {
     this.generateProfilePictures()
     this.labContent()
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll())
   }
 
   componentWillUnmount () {
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('scroll', this.handleScroll())
   }
 
   handleScroll () {
