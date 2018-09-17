@@ -39,10 +39,10 @@ class Collaborators extends Component {
       return <img key={i} className="sponsor-img" alt={sponsor.name} src={uri} />
     })
 
-    return <div>
+    return <React.Fragment>
       <div className="collaborator-container">{collaborators}</div>
       <div className="sponsor-container">{sponsors}</div>
-    </div>
+    </React.Fragment>
   }
 }
 

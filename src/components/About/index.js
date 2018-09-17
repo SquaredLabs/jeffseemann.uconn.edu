@@ -12,19 +12,19 @@ const gray = { color: colors.siteGray }
 const black = { color: colors.siteBlack }
 
 class About extends Component {
-  
-    state = {
-      image: '',
-      description: '',
-      contact: ''
-    }
+
+  state = {
+    image: '',
+    description: '',
+    contact: ''
+  }
 
 
-  componentDidMount () {
+  componentDidMount() {
     this.getAboutContent()
   }
 
-  async getAboutContent () {
+  async getAboutContent() {
     const response = await apiFetch(apiUri.about.pathname)
     if (response && response.data.length > 0) {
       this.setState({
@@ -35,14 +35,14 @@ class About extends Component {
     }
   }
 
-  render () {
+  render() {
     const imageUrl = apiImageUrl(this.state.image)
-    const description = {__html: this.state.description}
-    const contact = {__html: this.state.contact}
+    const description = { __html: this.state.description }
+    const contact = { __html: this.state.contact }
 
     return <div className="about-container">
       <div className="about-left">
-        <Header page="About" hideWithNav={true}/>
+        <Header page="About" hideWithNav={true} />
         <div className="about-wrapper">
           <img className="about-img" alt="" src={imageUrl}></img>
           <div className="about-desc" style={black} dangerouslySetInnerHTML={description}></div>
