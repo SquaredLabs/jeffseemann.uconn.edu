@@ -17,7 +17,7 @@ class Position extends Component {
       </div>
       <div className="position-desc" style={black}>{position.description}</div>
       <br />
-      <a className="position-apply" style={black} href={position.link} target="_blank">Apply Now</a>
+      <a className="position-apply" style={black} href={position.link} target="_blank"  rel="noopener noreferrer">Apply Now</a>
     </div>
   }
 }
