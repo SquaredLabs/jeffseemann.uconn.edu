@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetch} from '../../utils'
+import { apiFetch } from '../../utils'
 import { apiUri } from '../../config'
 import Header from '../Header'
 import NowReading from './NowReading'
@@ -14,11 +14,11 @@ class Reading extends Component {
     pastReading: [],
     error: false
   }
-  componentDidMount() {
+  componentDidMount () {
     this.downloadData()
   }
 
-  async downloadData() {
+  async downloadData () {
     try {
       const pastReading = await apiFetch(apiUri.pastReading.pathname, apiUri.pastReading.query)
 

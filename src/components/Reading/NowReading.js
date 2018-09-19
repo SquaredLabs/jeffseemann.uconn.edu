@@ -1,6 +1,6 @@
 import React from 'react'
-import {apiImageUrl } from '../../utils'
-import { colors} from '../../config'
+import { apiImageUrl } from '../../utils'
+import { colors } from '../../config'
 
 import './styles.css'
 
@@ -8,10 +8,6 @@ const grayStyle = { color: colors.siteGray }
 const blackStyle = { color: colors.siteBlack }
 
 const nowReading = (props) => {
-
-
-
-
   const books = props.books.map((book) => {
     const uri = apiImageUrl(book.image.data.url)
     return <div className="book" key={book.id}>
