@@ -1,5 +1,5 @@
 import React from 'react'
-import {  apiImageUrl } from '../../utils'
+import { apiImageUrl } from '../../utils'
 import Partner from './Partner'
 
 import './styles.css'

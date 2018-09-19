@@ -8,6 +8,7 @@ import Header from '../Header'
 import CourseTile from './CourseTile'
 import Menu from '../Navigation/Menu'
 import YearsBreadCrumbs from '../YearsBreadCrumbs'
+import ErrorHandler from '../../hoc/ErrorHandler/errorHandler'
 
 import './styles.css'
 
@@ -16,26 +17,27 @@ const black = { color: colors.siteBlack }
 const defaultYearsToDisplay = 8
 
 class Courses extends Component {
- 
-   
 
-    state = {
-      courses: [],
-      years: [],
-      yearsNav: [],
-      // Keep track of these two states so that nonconsecutive years load perfectly
-      // while breadcrumbs navigation bar allows quick filtering by year
-      untilYearToDisplay: 0,
-      atLeastNumToDisplay: defaultYearsToDisplay
-    }
-  
-  componentDidMount () {
+
+
+  state = {
+    courses: [],
+    years: [],
+    yearsNav: [],
+    // Keep track of these two states so that nonconsecutive years load perfectly
+    // while breadcrumbs navigation bar allows quick filtering by year
+    untilYearToDisplay: 0,
+    atLeastNumToDisplay: defaultYearsToDisplay,
+    error: false
+  }
+
+  componentDidMount() {
     this.getCourses()
   }
 
-  scrollToTop () { scroll.scrollToTop() }
+  scrollToTop() { scroll.scrollToTop() }
 
-  showMoreCourses () {
+  showMoreCourses() {
     this.setState({
       atLeastNumToDisplay: this.state.atLeastNumToDisplay + defaultYearsToDisplay,
       untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay,
@@ -43,7 +45,7 @@ class Courses extends Component {
     })
   }
 
-  showUntilCourse (year) {
+  showUntilCourse(year) {
     const newYearsNav = this.state.yearsNav.filter(y => y < year)
     this.setState({
       untilYearToDisplay: year - 1, // offset to filter
@@ -52,8 +54,14 @@ class Courses extends Component {
     })
   }
 
-  async getCourses () {
-    const response = await apiFetch(apiUri.courses.pathname)
+  async getCourses() {
+    let response = null
+    try {
+      response = await apiFetch(apiUri.courses.pathname)
+    } catch (error) {
+      this.setState({ error: true })
+      return
+    }
     const years = _.uniq(response.data.map(course => course.year)).sort((a, b) => b - a)
     this.setState({
       courses: response.data,
@@ -63,7 +71,7 @@ class Courses extends Component {
     })
   }
 
-  render () {
+  render() {
     // Display subset of courses grouped by year
     const CourseTiles = this.state.years.slice(0, this.state.atLeastNumToDisplay)
       .map((year, i) => {
@@ -71,34 +79,38 @@ class Courses extends Component {
         return <CourseTile year={year} ref={year} courses={relevantCourses} key={i} />
       })
 
-    return <div className="courses-container">
-      <div className="courses-container-extra">
-        <Header page="Courses"/>
-      </div>
-      {/* TODO: fix sticky scrolling */}
-      <div className="courses-nextprev-container">
-        <div className="courses-next">
-          <div className="courses-next-arrow">&uarr;</div>
-          <div className="courses-rotate" style={black}>Next</div>
+    return(
+    <ErrorHandler error={this.state.error}>
+      <div className="courses-container">
+        <div className="courses-container-extra">
+          <Header page="Courses" />
         </div>
-        <div className="courses-prev">
-          <div className="courses-rotate" style={black}>Previous</div>
-          <div>&darr;</div>
+        {/* TODO: fix sticky scrolling */}
+        <div className="courses-nextprev-container">
+          <div className="courses-next">
+            <div className="courses-next-arrow">&uarr;</div>
+            <div className="courses-rotate" style={black}>Next</div>
+          </div>
+          <div className="courses-prev">
+            <div className="courses-rotate" style={black}>Previous</div>
+            <div>&darr;</div>
+          </div>
         </div>
-      </div>
-      <div className="courses-wrapper">{CourseTiles}</div>
-      <div className="courses-totop-container">
-        <div className="courses-totop">
-          <div>&uarr;</div>
-          <div style={black} onClick={this.scrollToTop}>To top</div>
+        <div className="courses-wrapper">{CourseTiles}</div>
+        <div className="courses-totop-container">
+          <div className="courses-totop">
+            <div>&uarr;</div>
+            <div style={black} onClick={this.scrollToTop}>To top</div>
+          </div>
         </div>
+        <Menu />
+        <YearsBreadCrumbs
+          yearClickAction={() => this.showMoreCourses()}
+          yearsNav={this.state.yearsNav}
+          showUntil={() => this.showUntilCourse()} />
       </div>
-      <Menu />
-      <YearsBreadCrumbs
-        yearClickAction={()=> this.showMoreCourses()}
-        yearsNav={this.state.yearsNav}
-        showUntil={()=> this.showUntilCourse()} />
-    </div>
+    </ErrorHandler>
+    )
   }
 }
 
