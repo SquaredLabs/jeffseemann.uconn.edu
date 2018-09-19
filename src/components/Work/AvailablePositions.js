@@ -1,6 +1,4 @@
-import React, { Component } from 'react'
-import { apiFetch } from '../../utils'
-import { apiUri } from '../../config'
+import React from 'react'
 
 import Position from './Position'
 

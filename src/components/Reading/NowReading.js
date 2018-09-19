@@ -1,6 +1,6 @@
 import React from 'react'
-import { apiFetch, apiImageUrl } from '../../utils'
-import { colors, apiUri } from '../../config'
+import {apiImageUrl } from '../../utils'
+import { colors} from '../../config'
 
 import './styles.css'
 

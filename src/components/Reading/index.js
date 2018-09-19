@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { apiFetch, apiImageUrl } from '../../utils'
+import { apiFetch} from '../../utils'
 import { apiUri } from '../../config'
 import Header from '../Header'
 import NowReading from './NowReading'
