@@ -1,6 +1,45 @@
 {
-    "extends": [ 
-        "react-app",
-        "standard"
-    ]
+    "parser":"babel-eslint",
+    "env": {
+        "browser":true,
+        "node": true,
+        "es6": true
+    },
+
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules":true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "react/prop-types":0
+        
+    },
+    "extends":[
+       "plugin:react/recommended"
+        ]
+ 
 }
