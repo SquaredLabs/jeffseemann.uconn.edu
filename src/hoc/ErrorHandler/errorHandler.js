@@ -2,7 +2,7 @@ import React from 'react'
 import { colors } from '../../config'
 import Header from '../../components/Header/index'
 import Navigation from '../../components/Navigation/index'
-const gray = { color: colors.siteGray }
+const gray = { color: colors.siteGray}
 const black = { color: colors.siteBlack }
 const lightgray = { color: colors.profileWhite }
 
@@ -15,7 +15,7 @@ const ErrorHandler = (props) => {
           <div className="notfound-header">
             <Header page="Lab" hideAlways={true} />
           </div>
-          <div className="notfound-404" style={black}>Error</div>
+          <div className="notfound-404" style={gray}>Error</div>
           <div className="notfound-error">
             <div style={lightgray}>https://jeffseemann.uconn.edu/</div>
             <div style={black}>An expected error has occured. Please come back later.</div>

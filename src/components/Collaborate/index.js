@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { colors } from '../../config'
-import { apiFetch, apiImageUrl } from '../../utils'
+import { apiFetch } from '../../utils'
 import { apiUri } from '../../config'
 import Header from '../Header'
 import Collaborators from './Collaborators'
