@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
-import scrollToComponent from 'react-scroll-to-component';
+import scrollToComponent from 'react-scroll-to-component'
 
 import { apiFetch } from '../../utils'
 import { apiUri, colors } from '../../config'

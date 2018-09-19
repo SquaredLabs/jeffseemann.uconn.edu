@@ -6,7 +6,7 @@ import Navigation from '../Navigation'
 import Menu from '../Navigation/Menu'
 import ProfilePicture from '../ProfilePicture'
 import ProfilePictureItem from '../ProfilePicture/ProfilePictureItem'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import './styles.css'
 import ErrorHandler from '../../hoc/ErrorHandler/errorHandler'
 

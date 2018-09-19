@@ -12,7 +12,7 @@ const black = { color: colors.siteBlack }
 const lightgray = { color: colors.profileWhite }
 
 class NotFound extends Component {
-  componentWillMount () {
+  UNSAFE_componentWillMount () {
     document.body.classList.add('page-notfound')
   }
 

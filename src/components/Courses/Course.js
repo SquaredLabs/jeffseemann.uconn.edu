@@ -12,31 +12,31 @@ class Course extends Component {
     state = { show: false }
 
    
-  toggleShow () { this.setState({ show: !this.state.show }) }
+    toggleShow () { this.setState({ show: !this.state.show }) }
 
-  render () {
-    const { course: { name, number, credits, professor, description } } = this.props
+    render () {
+      const { course: { name, number, credits, professor, description } } = this.props
 
-    const showDescription = this.state.show
-      ? <div className="course-description-text" style={gray}>{description}</div>
-      : <div></div>
+      const showDescription = this.state.show
+        ? <div className="course-description-text" style={gray}>{description}</div>
+        : <div></div>
 
-    return <div className="course-container">
-      <div className="course-info-container">
-        <div className="course-name" style={black}>{name}</div>
-        <div className="course-signature" style={gray}>
-          {number} &middot; {credits}
+      return <div className="course-container">
+        <div className="course-info-container">
+          <div className="course-name" style={black}>{name}</div>
+          <div className="course-signature" style={gray}>
+            {number} &middot; {credits}
+          </div>
+          <div className="course-professor" style={black}>{professor}</div>
+          <div className="course-img-container">
+            <img className="course-img-expand" alt="icon" onClick={()=> this.toggleShow()}
+              src={this.state.show ? 'assets/img/Collapse_Text.png' : 'assets/img/Expand_Text.png'}></img>
+            <div className="course-description" style={black} onClick={()=> this.toggleShow()}>Course Description</div>
+          </div>
+          {showDescription}
         </div>
-        <div className="course-professor" style={black}>{professor}</div>
-        <div className="course-img-container">
-          <img className="course-img-expand" alt="icon" onClick={()=> this.toggleShow()}
-            src={this.state.show ? 'assets/img/Collapse_Text.png' : 'assets/img/Expand_Text.png'}></img>
-          <div className="course-description" style={black} onClick={()=> this.toggleShow()}>Course Description</div>
-        </div>
-        {showDescription}
       </div>
-    </div>
-  }
+    }
 }
 
 export default Course

@@ -80,36 +80,36 @@ class Courses extends Component {
       })
 
     return(
-    <ErrorHandler error={this.state.error}>
-      <div className="courses-container">
-        <div className="courses-container-extra">
-          <Header page="Courses" />
-        </div>
-        {/* TODO: fix sticky scrolling */}
-        <div className="courses-nextprev-container">
-          <div className="courses-next">
-            <div className="courses-next-arrow">&uarr;</div>
-            <div className="courses-rotate" style={black}>Next</div>
+      <ErrorHandler error={this.state.error}>
+        <div className="courses-container">
+          <div className="courses-container-extra">
+            <Header page="Courses" />
           </div>
-          <div className="courses-prev">
-            <div className="courses-rotate" style={black}>Previous</div>
-            <div>&darr;</div>
+          {/* TODO: fix sticky scrolling */}
+          <div className="courses-nextprev-container">
+            <div className="courses-next">
+              <div className="courses-next-arrow">&uarr;</div>
+              <div className="courses-rotate" style={black}>Next</div>
+            </div>
+            <div className="courses-prev">
+              <div className="courses-rotate" style={black}>Previous</div>
+              <div>&darr;</div>
+            </div>
           </div>
-        </div>
-        <div className="courses-wrapper">{CourseTiles}</div>
-        <div className="courses-totop-container">
-          <div className="courses-totop">
-            <div>&uarr;</div>
-            <div style={black} onClick={this.scrollToTop}>To top</div>
+          <div className="courses-wrapper">{CourseTiles}</div>
+          <div className="courses-totop-container">
+            <div className="courses-totop">
+              <div>&uarr;</div>
+              <div style={black} onClick={this.scrollToTop}>To top</div>
+            </div>
           </div>
+          <Menu />
+          <YearsBreadCrumbs
+            yearClickAction={() => this.showMoreCourses()}
+            yearsNav={this.state.yearsNav}
+            showUntil={() => this.showUntilCourse()} />
         </div>
-        <Menu />
-        <YearsBreadCrumbs
-          yearClickAction={() => this.showMoreCourses()}
-          yearsNav={this.state.yearsNav}
-          showUntil={() => this.showUntilCourse()} />
-      </div>
-    </ErrorHandler>
+      </ErrorHandler>
     )
   }
 }
