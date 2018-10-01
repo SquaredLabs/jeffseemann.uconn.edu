@@ -10,13 +10,9 @@ const lightGray = { color: colors.profileWhite }
 const black = { color: colors.siteBlack }
 
 class Menu extends Component {
-
-
-
   state = { show: false }
 
-
-  componentWillUnmount() {
+  componentWillUnmount () {
     document.body.classList.remove('page-menu')
     clearAllBodyScrollLocks()
   }
@@ -24,7 +20,7 @@ class Menu extends Component {
   disableScroll = () => { disableBodyScroll(document.body) }
   enableScroll = () => { enableBodyScroll(document.body) }
 
-  trigger() {
+  trigger () {
     this.setState({ show: !this.state.show })
     this.state.show ? this.enableScroll() : this.disableScroll()
     this.state.show
@@ -32,7 +28,7 @@ class Menu extends Component {
       : document.body.classList.add('page-menu')
   }
 
-  render() {
+  render () {
     const sign = this.state.show ? { __html: '&times;' } : { __html: '&plus;' }
     const menu = this.state.show ? 'menu-navigation-open' : 'menu-navigation-closed'
 

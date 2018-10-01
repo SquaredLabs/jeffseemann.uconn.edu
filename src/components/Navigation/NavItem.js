@@ -7,7 +7,7 @@ import './styles.css'
 const styles = { color: colors.siteGray }
 
 class NavItem extends Component {
-  render() {
+  render () {
     const { text, link, index } = this.props
     const navItemColor = index === 0 ? 'first' : 'rest'
     const addLastName = (text === 'Lab' && index === 0) ? 'Seemann ' : ''

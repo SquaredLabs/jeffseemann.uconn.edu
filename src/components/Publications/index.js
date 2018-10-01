@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
-import scrollToComponent from 'react-scroll-to-component';
+import scrollToComponent from 'react-scroll-to-component'
 
 import { apiFetch } from '../../utils'
 import { apiUri, colors } from '../../config'
@@ -19,7 +19,6 @@ const black = { color: colors.siteBlack }
 const defaultYearsToDisplay = 2
 
 class Publications extends Component {
-
     scrollPoints = {}
     state = {
       publications: [],
@@ -32,29 +31,29 @@ class Publications extends Component {
       untilYearToDisplay: 0,
       atLeastNumToDisplay: defaultYearsToDisplay
     }
-  
-  componentDidMount () {
-    this.getPublications()
-  }
 
-  scrollToTop () { scroll.scrollToTop() }
+    componentDidMount () {
+      this.getPublications()
+    }
 
-  showMorePublications () {
-    this.setState({
-      atLeastNumToDisplay: this.state.atLeastNumToDisplay + defaultYearsToDisplay,
-      untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay,
-      yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay)
-    })
-  }
+    scrollToTop () { scroll.scrollToTop() }
 
-  showUntilPublication (year) {
-    const newYearsNav = this.state.yearsNav.filter(y => y < year)
-    this.setState({
-      untilYearToDisplay: year - 1, // offset to filter
-      yearsNav: newYearsNav,
-      atLeastNumToDisplay: this.state.years.length - newYearsNav.length
-    })
-  }
+    showMorePublications () {
+      this.setState({
+        atLeastNumToDisplay: this.state.atLeastNumToDisplay + defaultYearsToDisplay,
+        untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay,
+        yearsNav: this.state.yearsNav.slice(defaultYearsToDisplay)
+      })
+    }
+
+    showUntilPublication (year) {
+      const newYearsNav = this.state.yearsNav.filter(y => y < year)
+      this.setState({
+        untilYearToDisplay: year - 1, // offset to filter
+        yearsNav: newYearsNav,
+        atLeastNumToDisplay: this.state.years.length - newYearsNav.length
+      })
+    }
 
   skipUntilPublication = (year) => {
     this.showUntilPublication(year)
@@ -89,7 +88,7 @@ class Publications extends Component {
     const currentYearIndex = this.state.years.indexOf(this.state.currentScolledYear)
     if (currentYearIndex === -1) return
     const nextYear = this.state.years[currentYearIndex + 1]
-    this.setState({currentScolledYear: nextYear})
+    this.setState({ currentScolledYear: nextYear })
     scrollToComponent(this.scrollPoints[nextYear + 'TOP'])
   }
 

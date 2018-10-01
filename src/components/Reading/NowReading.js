@@ -8,11 +8,9 @@ const grayStyle = { color: colors.siteGray }
 const blackStyle = { color: colors.siteBlack }
 
 class NowReading extends Component {
-
   state = {
-      books: []
-    }
-  
+    books: []
+  }
 
   componentDidMount () {
     this.nowReading()

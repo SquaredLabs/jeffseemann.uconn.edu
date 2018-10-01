@@ -1,6 +1,14 @@
 {
-    "extends": [ 
-        "react-app",
-        "standard"
-    ]
+      "parser":"babel-eslint",    
+     "extends": "standard",
+    "plugins":["react"],
+    "rules":{
+      "react/jsx-uses-react": "error",   
+     "react/jsx-uses-vars":
+     "error"        
+},
+    "env":{
+    "browser":true,
+    "jest":true   
+}
 }
