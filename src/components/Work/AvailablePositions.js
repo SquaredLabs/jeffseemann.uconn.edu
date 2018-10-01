@@ -26,5 +26,4 @@ class AvailablePositions extends Component {
       return <div className="availabe-positions-container">{positions}</div>
     }
 }
-
 export default AvailablePositions

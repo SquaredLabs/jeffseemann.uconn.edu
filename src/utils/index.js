@@ -13,7 +13,7 @@ export const endpoint = process.env.REACT_APP_DIRECTUS_ENDPOINT || '/'
  */
 export function apiFetchGeneric (protocol, hostname, pathname, query, ...args) {
   const uri = url.format({ protocol, hostname, pathname, query })
-
+  
   return fetch(uri, ...args)
     .then((response) => response.json())
     .catch((error) => { throw error })
@@ -27,8 +27,10 @@ export function apiFetchGeneric (protocol, hostname, pathname, query, ...args) {
  */
 export function apiFetch (pathname, query, ...args) {
   const path = url.resolve(endpoint, pathname + '?' + qs.stringify(query))
+  
   return fetch(path, ...args)
     .then(response => response.json())
+    
 }
 
 export function apiImageUrlGeneric (obj, imageurl) {

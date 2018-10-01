@@ -24,7 +24,6 @@ class Footer extends Component {
         phone: phone.data[0].phone
       })
     }
-
     // Replace with dynamic content from admin-on-rest
     render = () =>
       <footer className="footer">

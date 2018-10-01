@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { apiFetch } from '../../utils'
 import { apiUri, colors } from '../../config'
 import Header from '../Header'
@@ -47,7 +46,7 @@ class Collaborate extends Component {
         </div>
         <div className="collab-slogan-container">
           <div className="collab-slogan" style={gray}>Knowledge is infinite.</div>
-          <div className="collab-slogan" style={green}>Let's share.</div>
+          <div className="collab-slogan" style={green}>Let&apos;s share.</div>
         </div>
         <div className="collab-collab" style={gray}>Past + Present Collaborators</div>
         <Collaborators collaborators={this.state.collaborators} sponsors={this.state.sponsors} />

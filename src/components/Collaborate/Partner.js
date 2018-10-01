@@ -8,7 +8,6 @@ const black = { color: colors.siteBlack }
 
 class Partner extends Component {
     state = { show: false }
-
     toggleShow () { this.setState({ show: !this.state.show }) }
 
     render () {

@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import { apiFetch } from '../../utils'
+=======
+import { apiFetch} from '../../utils'
+>>>>>>> 006e7b39c25537bacc85490708234b9d2d72f7b3
 import { apiUri } from '../../config'
 import Header from '../Header'
 import NowReading from './NowReading'
