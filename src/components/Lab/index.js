@@ -6,7 +6,7 @@ import Navigation from '../Navigation'
 import Menu from '../Navigation/Menu'
 import ProfilePicture from '../ProfilePicture'
 import ProfilePictureItem from '../ProfilePicture/ProfilePictureItem'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import './styles.css'
 import ErrorHandler from '../../hoc/ErrorHandler/errorHandler'
 
@@ -17,8 +17,6 @@ const black = { color: colors.siteBlack }
 const backgroundBlack = { background: colors.siteBlack }
 
 class Lab extends Component {
-
-
   state = {
     // list of profile picture components
     members: [],
@@ -42,21 +40,17 @@ class Lab extends Component {
     error: false
   }
 
-
-  componentDidMount() {
-
+  componentDidMount () {
     this.generateProfilePictures()
     this.labContent()
     window.addEventListener('scroll', this.handleScroll())
-
-
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('scroll', this.handleScroll())
   }
 
-  handleScroll() {
+  handleScroll () {
     // Perform a boolean XOR operation to only display menu in 2nd and 3rd quadrants - spaghetti!
     const a = window.innerHeight - window.scrollY < 0
     const b = document.documentElement.offsetHeight - window.scrollY <= 2 * window.innerHeight
@@ -64,14 +58,13 @@ class Lab extends Component {
     this.setState({ menu: className })
   }
 
-  async generateProfilePictures() {
+  async generateProfilePictures () {
     var i = 0
     var j = 2
     var rows = []
     let response = null
     try {
       response = await apiFetch(apiUri.labProfiles.pathname, apiUri.labProfiles.query)
-
     } catch (error) {
       this.setState({ error: true })
       return
@@ -88,11 +81,9 @@ class Lab extends Component {
       }
     }
     this.setState({ members: rows })
-
-
   }
 
-  async labContent() {
+  async labContent () {
     let response = null
     try {
       response = await apiFetch(apiUri.labContent.pathname)
@@ -103,7 +94,7 @@ class Lab extends Component {
     if (response && response.data) this.setState({ content: response.data[0] })
   }
 
-  render() {
+  render () {
     const uriImageLeft = apiImageUrl(this.state.content.first_image.data.url)
     const uriImageCenter = apiImageUrl(this.state.content.second_image.data.url)
     const uriImageRight = apiImageUrl(this.state.content.third_image.data.url)

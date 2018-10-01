@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { colors } from '../../config'
+
 import { apiFetch } from '../../utils'
-import { apiUri } from '../../config'
+import { apiUri, colors } from '../../config'
 import Header from '../Header'
 import Collaborators from './Collaborators'
 import Menu from '../Navigation/Menu'
@@ -18,10 +18,10 @@ class Collaborate extends Component {
     sponsors: [],
     error: false
   }
-  componentDidMount() {
+  componentDidMount () {
     this.downloadData()
   }
-  async downloadData() {
+  async downloadData () {
     try {
       const downloadedCollaborators = await apiFetch(apiUri.collaborators.pathname, apiUri.collaborators.query)
       const downloadedSponsors = await apiFetch(apiUri.sponsors.pathname, apiUri.sponsors.query)

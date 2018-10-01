@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { colors } from '../../config'
 import { apiFetch } from '../../utils'
-import { apiUri } from '../../config'
+import { apiUri, colors } from '../../config'
 import Header from '../Header'
 import AvailablePositions from './AvailablePositions'
 import Menu from '../Navigation/Menu'
@@ -17,18 +16,17 @@ class Work extends Component {
     positions: [],
     error: false
   }
-  componentDidMount() {
+  componentDidMount () {
     this.getPositions()
   }
 
-  async getPositions() {
+  async getPositions () {
     try {
       const response = await apiFetch(apiUri.positions.pathname, apiUri.positions.query)
       this.setState({ positions: response.data })
     } catch (error) {
       this.setState({ error: true })
     }
-
   }
   render = () =>
     <ErrorHandler error={this.state.error}>
@@ -46,11 +44,11 @@ class Work extends Component {
         <div className="work-description" style={black}>
           Our eyes, ears, and minds are always open, especially to those interested in
           working with us.
-        <br />
+          <br />
           <br />
           Send us an email with a cover letter discussing what it is you’d like to do at the lab,
           and why you want to engage with us. Include your resume/CV as well (both in PDF format).
-      </div>
+        </div>
         <Menu />
       </div>
     </ErrorHandler>

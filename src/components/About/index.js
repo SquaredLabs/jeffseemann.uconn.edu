@@ -11,7 +11,6 @@ const gray = { color: colors.siteGray }
 const black = { color: colors.siteBlack }
 
 class About extends Component {
-
   state = {
     image: '',
     description: '',
@@ -19,12 +18,11 @@ class About extends Component {
     error: false
   }
 
-
-  componentDidMount() {
+  componentDidMount () {
     this.getAboutContent()
   }
 
-  async getAboutContent() {
+  async getAboutContent () {
     let response = null
     try {
       response = await apiFetch(apiUri.about.pathname)
@@ -41,7 +39,7 @@ class About extends Component {
     }
   }
 
-  render() {
+  render () {
     const imageUrl = apiImageUrl(this.state.image)
     const description = { __html: this.state.description }
     const contact = { __html: this.state.contact }

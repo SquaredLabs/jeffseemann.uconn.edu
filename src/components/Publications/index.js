@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
-import scrollToComponent from 'react-scroll-to-component';
+import scrollToComponent from 'react-scroll-to-component'
 
 import { apiFetch } from '../../utils'
 import { apiUri, colors } from '../../config'
@@ -19,7 +19,6 @@ const black = { color: colors.siteBlack }
 const defaultYearsToDisplay = 2
 
 class Publications extends Component {
-
   scrollPoints = {}
   state = {
     publications: [],
@@ -34,13 +33,13 @@ class Publications extends Component {
     error: false
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.getPublications()
   }
 
-  scrollToTop() { scroll.scrollToTop() }
+  scrollToTop () { scroll.scrollToTop() }
 
-  showMorePublications() {
+  showMorePublications () {
     this.setState({
       atLeastNumToDisplay: this.state.atLeastNumToDisplay + defaultYearsToDisplay,
       untilYearToDisplay: this.state.untilYearToDisplay - defaultYearsToDisplay,
@@ -48,7 +47,7 @@ class Publications extends Component {
     })
   }
 
-  showUntilPublication(year) {
+  showUntilPublication (year) {
     const newYearsNav = this.state.yearsNav.filter(y => y < year)
     this.setState({
       untilYearToDisplay: year - 1, // offset to filter
@@ -64,7 +63,7 @@ class Publications extends Component {
     setTimeout(() => { scrollToComponent(this.scrollPoints[year + 'TOP']) }, 300)
   }
 
-  async getPublications() {
+  async getPublications () {
     let response = null
     try {
       response = await apiFetch(apiUri.publications.pathname)

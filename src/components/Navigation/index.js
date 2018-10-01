@@ -16,8 +16,7 @@ class Navigation extends Component {
     navItems: nav.slice(this.i).concat(nav.slice(0, this.i))
   }
 
-
-  render() {
+  render () {
     return (
       <div className="nav-container">
         {this.state.navItems.map((item, i) => <NavItem index={i} key={item.name} {...item} />)}
