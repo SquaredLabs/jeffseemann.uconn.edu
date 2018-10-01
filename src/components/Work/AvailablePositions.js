@@ -1,7 +1,7 @@
-import React from 'react'
-
+import React, { Component } from 'react'
+import { apiFetch } from '../../utils/index'
+import { apiUri } from '../../config'
 import Position from './Position'
-
 import './styles.css'
 
 class AvailablePositions extends Component {
