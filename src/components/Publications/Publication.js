@@ -26,7 +26,7 @@ class Publication extends Component {
       ? <div className="publication-abstract-text" style={black}>
         {abstract}
         {url ? <div className="publication-abstract-readmore">
-          <a className="publication-abstract-readmore-link" href={url} target="_blank">Read more!</a>
+          <a className="publication-abstract-readmore-link" href={url} target="_blank" rel="noopener noreferrer">Read more!</a>
         </div> : 'N/A'}
       </div>
       : <div></div>
